@@ -1,0 +1,13 @@
+.next
+.codex-git
+.npm-cache
+node_modules
+out
+dist
+.env*
+!.env.example
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+Obraz Codex 27 sie 2026, 10_38_29.png
