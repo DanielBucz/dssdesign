@@ -644,6 +644,34 @@ a {
   height: 71%;
 }
 
+.project-visual[data-size="hero"]:has(.project-screenshot) {
+  display: grid;
+  gap: clamp(1.2rem, 2vw, 1.8rem);
+  min-height: auto;
+  padding: clamp(1.4rem, 2.5vw, 2.4rem);
+}
+
+.project-visual[data-size="hero"]:has(.project-screenshot)::after {
+  display: none;
+}
+
+.project-visual[data-size="hero"]:has(.project-screenshot) .project-screenshot {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+.project-visual[data-size="hero"]:has(.project-screenshot) .cover-title {
+  position: static;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+}
+
 .mockup {
   position: absolute;
   display: block;
@@ -1629,10 +1657,11 @@ a {
 .case-shot img {
   display: block;
   width: 100%;
-  height: clamp(23rem, 34vw, 36rem);
+  height: auto;
+  max-height: clamp(30rem, 54vw, 46rem);
   border: 1px solid var(--color-line);
-  background: var(--color-ink);
-  object-fit: cover;
+  background: #050505;
+  object-fit: contain;
   object-position: top center;
 }
 
@@ -1642,8 +1671,8 @@ a {
 }
 
 .case-shot[data-orientation="portrait"] img {
-  height: clamp(31rem, 58vw, 42rem);
-  object-fit: cover;
+  max-height: clamp(31rem, 64vw, 46rem);
+  object-fit: contain;
 }
 
 .case-shot figcaption {
@@ -2092,6 +2121,11 @@ a {
   .project-visual[data-size="hero"] {
     min-height: 32rem;
     margin: 0 var(--space-page);
+  }
+
+  .project-visual[data-size="hero"]:has(.project-screenshot) {
+    min-height: auto;
+    padding: 0.75rem;
   }
 
   .case-section p {
