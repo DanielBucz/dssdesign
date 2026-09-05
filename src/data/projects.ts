@@ -81,6 +81,23 @@ export const projects: Project[] = [
     description:
       "Landing page dla detailingu samochodowego w Lublinie, z ofertą usług, realizacjami, kalkulatorem wyceny i ścieżką kontaktu.",
     palette: "detailing",
+    imageSrc: "/images/case-studies/buczek-poleruje/effects-before-after.png",
+    imageAlt:
+      "Rzut sekcji efektów renowacji lamp na stronie Buczek Poleruje z porównaniem przed i po.",
+    gallery: [
+      {
+        src: "/images/case-studies/buczek-poleruje/pricing-calculator.png",
+        alt: "Rzut sekcji szybkiej wyceny renowacji lamp na stronie Buczek Poleruje.",
+        label: "Kalkulator wyceny",
+        orientation: "landscape",
+      },
+      {
+        src: "/images/case-studies/buczek-poleruje/mobile-realization.png",
+        alt: "Mobilny rzut karty realizacji i przycisków kontaktowych na stronie Buczek Poleruje.",
+        label: "Wersja mobile",
+        orientation: "portrait",
+      },
+    ],
     location: "Lublin",
     externalUrl: "https://buczekpoleruje.pl",
     challenge:
