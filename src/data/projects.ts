@@ -5,7 +5,7 @@ export type Project = {
   year: string;
   type: string;
   description: string;
-  palette: "logistics" | "interior" | "mono" | "digital";
+  palette: "logistics" | "detailing" | "interior" | "mono" | "digital";
   imageSrc?: string;
   imageAlt?: string;
   gallery?: {
@@ -71,6 +71,33 @@ export const projects: Project[] = [
         "Hero z fotografią transportową, sekcje usługowe, listy ofertowe, blog i układ pod rozbudowę treści SEO.",
     },
     roles: ["Web Design", "UX", "Development", "SEO structure"],
+  },
+  {
+    slug: "buczek-poleruje",
+    title: "Buczek Poleruje",
+    category: "Landing Page / UX / Development",
+    year: "2026",
+    type: "Real Client Project",
+    description:
+      "Landing page dla detailingu samochodowego w Lublinie, z ofertą usług, realizacjami, kalkulatorem wyceny i ścieżką kontaktu.",
+    palette: "detailing",
+    location: "Lublin",
+    externalUrl: "https://buczekpoleruje.pl",
+    challenge:
+      "Lokalna usługa detailingowa potrzebowała strony, która szybko pokazuje efekt pracy, buduje zaufanie i prowadzi użytkownika do telefonu albo wiadomości na Instagramie.",
+    solution:
+      "Strona została oparta o mocne przykłady przed i po, prostą listę usług, orientacyjny kalkulator ceny oraz bezpośrednie CTA do kontaktu.",
+    effect:
+      "Powstała kompaktowa strona sprzedażowa, która pokazuje realny efekt usługi i skraca drogę od zainteresowania do umówienia terminu.",
+    system: {
+      typography:
+        "Prosta, mocna typografia wspierająca krótkie komunikaty usługowe i szybkie skanowanie oferty.",
+      colors:
+        "Czerń, biel i metaliczne refleksy lakieru. Paleta buduje skojarzenie z czystym autem, połyskiem i pracą ręczną.",
+      components:
+        "Hero usługowy, realizacje przed i po, kafle usług, kalkulator wyceny, opinie i szybki kontakt.",
+    },
+    roles: ["Web Design", "UX", "Frontend", "Conversion flow"],
   },
   {
     slug: "remonter",
