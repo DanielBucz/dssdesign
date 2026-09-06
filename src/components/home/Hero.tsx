@@ -69,18 +69,28 @@ export function Hero() {
       </div>
 
       <motion.div
-        className="fold-object"
+        className="assembly-object"
         aria-hidden="true"
         style={{ rotateX, rotateY }}
-        initial={reduceMotion ? false : { opacity: 0, scale: 0.92, y: 20 }}
-        animate={reduceMotion ? undefined : { opacity: 1, scale: 1, y: 0 }}
+        initial={reduceMotion ? false : { scale: 0.92, y: 20 }}
+        animate={reduceMotion ? undefined : { scale: 1, y: 0 }}
         transition={{ duration: 1.1, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
       >
-        <motion.span className="object-glow" style={{ left: glowX, top: glowY }} />
-        <span className="fold fold-a" />
-        <span className="fold fold-b" />
-        <span className="fold fold-c" />
-        <span className="fold fold-d" />
+        <motion.span className="assembly-light" style={{ left: glowX, top: glowY }} />
+        <span className="assembly-grid-card" />
+        <span className="assembly-sheet assembly-sheet-back">
+          <span>DSS</span>
+          <i />
+        </span>
+        <span className="assembly-sheet assembly-sheet-front">
+          <span>SKŁAD</span>
+          <i />
+        </span>
+        <span className="assembly-sheet assembly-sheet-accent" />
+        <span className="assembly-rule assembly-rule-a" />
+        <span className="assembly-rule assembly-rule-b" />
+        <span className="assembly-crop assembly-crop-a" />
+        <span className="assembly-crop assembly-crop-b" />
       </motion.div>
 
       <div className="scroll-cue" aria-hidden="true">
