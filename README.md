@@ -23,3 +23,6 @@ npm run build
 ```
 
 Projekt jest skonfigurowany pod statyczny eksport Next.js.
+
+
+Po `npm run build` prześlij **zawartość** folderu `out` do katalogu strony na hostingu.

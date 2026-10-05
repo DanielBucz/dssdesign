@@ -52,8 +52,8 @@ export function Hero() {
           animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
         >
-          Strategia, design i technologia. Złożone w całość, żeby działało,
-          wyglądało i sprzedawało.
+          Projektujemy i tworzymy strony internetowe dla firm, landing page
+          i interfejsy UX/UI. Łączymy strategię, design i technologię.
         </motion.p>
 
         <motion.div

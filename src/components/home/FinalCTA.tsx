@@ -17,8 +17,7 @@ export function FinalCTA() {
       </div>
       <div className="final-cta-side">
         <p>
-          Napisz, zadzwoń albo odezwij się na Instagramie. Porozmawiajmy o
-          współpracy.
+          Napisz lub zadzwoń. Porozmawiajmy o współpracy.
         </p>
         <a href="/kontakt">
           Porozmawiajmy <span aria-hidden="true">→</span>

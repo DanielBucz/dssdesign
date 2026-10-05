@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageShell } from "@/components/layout/PageShell";
 import { ProjectVisual } from "@/components/projects/ProjectVisual";
-import { siteConfig } from "@/config/site";
+import { pageMetadata } from "@/config/seo";
 import { getProjectBySlug, projects } from "@/data/projects";
 
 type ProjectPageProps = {
@@ -27,19 +27,12 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     };
   }
 
-  return {
-    title: `${project.title} case study`,
-    description: project.description,
-    alternates: {
-      canonical: `/projekty/${project.slug}`,
-    },
-    openGraph: {
-      title: `${project.title} | ${project.type}`,
-      description: project.description,
-      url: `${siteConfig.url}/projekty/${project.slug}`,
-      type: "article",
-    },
-  };
+  return pageMetadata(
+    `${project.title} — ${project.status === "in-progress" ? "projekt w trakcie" : "projekt strony"}`,
+    project.description,
+    `/projekty/${project.slug}/`,
+    project.imageSrc,
+  );
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
@@ -80,7 +73,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <div>
                 <dt>Strona</dt>
                 <dd>
-                  <a href={project.externalUrl} target="_blank" rel="noreferrer">
+                  <a href={project.externalUrl} target="_blank" rel="nofollow">
                     Zobacz online
                   </a>
                 </dd>
@@ -134,7 +127,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 data-orientation={item.orientation ?? "landscape"}
                 key={item.src}
               >
-                <img src={item.src} alt={item.alt} />
+                <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
                 <figcaption>{item.label}</figcaption>
               </figure>
             ))
@@ -147,7 +140,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
 
         <section className="case-section">
-          <h2>Efekt</h2>
+          <h2>{project.status === "in-progress" ? "Aktualny etap" : "Efekt"}</h2>
           <p>{project.effect}</p>
         </section>
 

@@ -1,14 +1,12 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/config/seo";
 import { PageShell } from "@/components/layout/PageShell";
+import { siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
-  title: "Kontakt",
-  description:
-    "Porozmawiajmy o stronie, redesignie, UX/UI albo digitalowej strategii marki.",
-  alternates: {
-    canonical: "/kontakt",
-  },
-};
+export const metadata = pageMetadata(
+  "Kontakt — porozmawiajmy o Twojej stronie",
+  "Potrzebujesz strony firmowej, landing page lub redesignu? Napisz na kontakt@dssdesign.pl lub zadzwoń: 668 974 402. Porozmawiajmy o Twoim projekcie.",
+  "/kontakt/",
+);
 
 export default function ContactPage() {
   return (
@@ -20,21 +18,17 @@ export default function ContactPage() {
         </h1>
         <div className="contact-panel">
           <p>
-            Dane kontaktowe są jeszcze robocze. Na tym etapie zostawiamy je jako
-            czytelne placeholdery, żeby nie publikować fikcyjnych informacji firmy.
+            Napisz do nas o swoim projekcie. Porozmawiajmy o tym, czego potrzebuje
+            Twoja marka i jak możemy pomóc.
           </p>
           <dl>
             <div>
               <dt>E-mail</dt>
-              <dd>do uzupełnienia</dd>
+              <dd><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></dd>
             </div>
             <div>
               <dt>Telefon</dt>
-              <dd>do uzupełnienia</dd>
-            </div>
-            <div>
-              <dt>Social</dt>
-              <dd>Instagram / Behance / LinkedIn</dd>
+              <dd><a href={`tel:${siteConfig.phone}`}>{siteConfig.phoneDisplay}</a></dd>
             </div>
           </dl>
         </div>

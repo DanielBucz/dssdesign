@@ -14,7 +14,7 @@ export function ProjectVisual({ project, size = "card" }: ProjectVisualProps) {
         <span>{project.year}</span>
       </div>
       {project.imageSrc ? (
-        <img className="project-screenshot" src={project.imageSrc} alt={project.imageAlt ?? ""} />
+        <img className="project-screenshot" src={project.imageSrc} alt={project.imageAlt ?? project.title} loading={size === "hero" ? "eager" : "lazy"} decoding="async" />
       ) : (
         <div className="cover-art" aria-hidden="true">
           <span className="mockup mockup-a" />
