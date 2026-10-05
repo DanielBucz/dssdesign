@@ -12,22 +12,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Dobrze się składa. | Studio kreatywne",
+    default: "Tworzenie stron internetowych | Dobrze się składa.",
     template: "%s | Dobrze się składa.",
   },
   description: siteConfig.description,
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    url: "/",
-    siteName: siteConfig.name,
-    title: "Dobrze się składa. | Studio kreatywne",
-    description:
-      "Strategia, design i technologia. Złożone w całość, żeby działało, wyglądało i sprzedawało.",
-    type: "website",
-    locale: "pl_PL",
-  },
+  robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {

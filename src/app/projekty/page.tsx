@@ -1,16 +1,13 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/config/seo";
 import { PageShell } from "@/components/layout/PageShell";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { projects } from "@/data/projects";
 
-export const metadata: Metadata = {
-  title: "Projekty",
-  description:
-    "Wybrane projekty i koncepcje studia Dobrze się składa: web design, UX/UI, branding i development.",
-  alternates: {
-    canonical: "/projekty",
-  },
-};
+export const metadata = pageMetadata(
+  "Realizacje stron internetowych",
+  "Zobacz projekty stron firmowych, landing page i projekt w trakcie realizacji. Poznaj zakres prac, rozwiązania UX/UI i wdrożenia studia Dobrze się składa.",
+  "/projekty/",
+);
 
 export default function ProjectsPage() {
   return (
@@ -18,11 +15,11 @@ export default function ProjectsPage() {
       <section className="subpage-hero light-page" data-nav-theme="light">
         <p className="subpage-kicker">Portfolio</p>
         <h1>
-          Projekty, które pokazują sposób myślenia<span className="accent-dot">.</span>
+          Projekty stron internetowych<span className="accent-dot">.</span>
         </h1>
         <p>
-          Na start pokazujemy wybrane koncepty i redesign studies. Każdy projekt
-          jest opisany jasno, bez udawania współpracy, która nie miała miejsca.
+          Zobacz nasze strony firmowe i landing page. Pokazujemy ukończone
+          realizacje oraz oznaczony projekt w trakcie prac.
         </p>
       </section>
 

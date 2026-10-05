@@ -1,14 +1,11 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/config/seo";
 import { PageShell } from "@/components/layout/PageShell";
 
-export const metadata: Metadata = {
-  title: "O nas",
-  description:
-    "Dobrze się składa to niezależne studio kreatywne łączące strategię, design i development.",
-  alternates: {
-    canonical: "/o-nas",
-  },
-};
+export const metadata = pageMetadata(
+  "Studio projektowania stron i UX/UI",
+  "Poznaj Dobrze się składa — niezależne studio łączące strategię, projektowanie stron internetowych, UX/UI i development. Zobacz, jak pracujemy.",
+  "/o-nas/",
+);
 
 export default function AboutPage() {
   return (

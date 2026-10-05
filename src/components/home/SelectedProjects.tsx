@@ -28,7 +28,7 @@ export function SelectedProjects() {
         <div className="projects-intro">
           <p>
             Każdy projekt to osobny układ decyzji: strategia, obraz, rytm i kod.
-            Pokazujemy koncepcje bez udawania gotowej listy klientów.
+            Zobacz strony, które stworzyliśmy dla naszych klientów.
           </p>
           <a href="/projekty" aria-label="Zobacz wszystkie projekty">
             Zobacz wszystkie projekty <span aria-hidden="true">→</span>

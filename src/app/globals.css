@@ -1348,7 +1348,7 @@ a {
 
 .site-footer {
   display: grid;
-  grid-template-columns: minmax(10rem, 1fr) repeat(4, minmax(8rem, 0.75fr));
+  grid-template-columns: minmax(10rem, 1fr) repeat(3, minmax(8rem, 0.75fr));
   gap: clamp(1.5rem, 4vw, 4rem);
   border-top: 1px solid var(--color-line);
   background: var(--color-black);

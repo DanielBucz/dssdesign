@@ -4,6 +4,7 @@ export type Project = {
   category: string;
   year: string;
   type: string;
+  status?: "in-progress";
   description: string;
   palette: "logistics" | "detailing" | "interior" | "mono" | "digital";
   imageSrc?: string;
@@ -117,56 +118,47 @@ export const projects: Project[] = [
     roles: ["Web Design", "UX", "Frontend", "Conversion flow"],
   },
   {
-    slug: "remonter",
-    title: "Remonter",
-    category: "Web Design / Development",
+    slug: "handmade-by-martula-art",
+    title: "Handmade by Martula art",
+    category: "Web Design / UX / Development",
     year: "2026",
-    type: "Concept Project / Redesign Study",
+    type: "Projekt w trakcie",
+    status: "in-progress",
     description:
-      "Premium redesign strony dla firmy od kompleksowego wykańczania wnętrz w Lublinie.",
+      "Powstająca strona pracowni ceramiki inspirowanej naturą — z kolekcjami, katalogiem prac i spokojną oprawą wizualną.",
     palette: "interior",
-    location: "Lublin",
+    imageSrc: "/images/case-studies/handmade-by-martula/home-hero.png",
+    imageAlt:
+      "Widok strony Handmade by Martula z nagłówkiem Kwiaty, które zostają i zdjęciem błękitnych ceramicznych kwiatów.",
+    gallery: [
+      {
+        src: "/images/case-studies/handmade-by-martula/collections.png",
+        alt: "Widok kolekcji Handmade by Martula ze zdjęciami ceramicznych bukietów.",
+        label: "Kolekcje — widok roboczy",
+        orientation: "landscape",
+      },
+      {
+        src: "/images/case-studies/handmade-by-martula/mobile-categories.png",
+        alt: "Mobilny widok kategorii Formy dekoracyjne z opisem i wyborem kategorii ceramiki.",
+        label: "Kategorie na telefonie — widok roboczy",
+        orientation: "portrait",
+      },
+    ],
     challenge:
-      "Strona firmy wykończeniowej powinna szybko budować zaufanie, pokazać standard pracy i prowadzić do zapytania bez nadmiaru treści.",
+      "Pokazać charakter ręcznie tworzonej ceramiki i uporządkować różnorodne prace w czytelne kategorie oraz kolekcje inspirowane naturą.",
     solution:
-      "Koncepcja opiera się na ciepłej palecie wnętrzarskiej, dużych modułach zdjęciowych, krótkich argumentach sprzedażowych i klarownej ścieżce kontaktu.",
+      "Projekt łączy duże fotografie prac, wyraziste szeryfowe nagłówki i spokojne tło. Kolekcje oraz nawigacja po kategoriach pomagają odkrywać ceramiczne kwiaty, naczynia i formy dekoracyjne również na telefonie.",
     effect:
-      "Powstał kierunek premium dla redesignu, który nie udaje dużej korporacji, tylko pokazuje rzemiosło, porządek i jakość wykonania.",
-    roles: ["Strategia", "UX", "Web Design", "Frontend"],
-  },
-  {
-    slug: "minus",
-    title: "Minus",
-    category: "Branding / Web Design",
-    year: "2026",
-    type: "Studio Concept",
-    description:
-      "Ciemny system wizualny dla marki produktowej z mocnym, minimalistycznym storefrontem.",
-    palette: "mono",
-    challenge:
-      "Marka produktowa potrzebowała ascetycznego kierunku, który wyróżnia opakowania i nie rozprasza użytkownika zbędną narracją.",
-    solution:
-      "Zaprojektowaliśmy ciemny układ storefrontu, prostą hierarchię kolekcji i surowy język wizualny z dużym naciskiem na produkt.",
-    effect:
-      "Koncept daje marce bardziej galeryjny charakter i ułatwia późniejsze rozwinięcie kampanii oraz sklepu.",
-    roles: ["Branding", "Web Design", "Art Direction"],
-  },
-  {
-    slug: "nova",
-    title: "Nova",
-    category: "Strategia / UX/UI",
-    year: "2026",
-    type: "Studio Concept",
-    description:
-      "Cyfrowy koncept dla produktu inwestycyjnego, oparty o prosty onboarding i wyrazisty mobile UI.",
-    palette: "digital",
-    challenge:
-      "Produkt cyfrowy wymagał lżejszego wejścia w temat inwestowania oraz interfejsu, który nie wygląda jak generyczny fintech.",
-    solution:
-      "Koncepcja prowadzi użytkownika przez krótkie ekrany decyzyjne, mocny mobile first UI i spokojniejszy język komunikacji.",
-    effect:
-      "Powstał kierunek, który łączy wiarygodność z bardziej współczesnym, zapamiętywalnym doświadczeniem.",
-    roles: ["Strategia", "UX/UI", "Prototype"],
+      "Projekt jest w trakcie realizacji. Prezentowane widoki pokazują aktualny kierunek wizualny strony głównej, kolekcji i mobilnego katalogu prac.",
+    system: {
+      typography:
+        "Duże szeryfowe nagłówki zestawione z lekkim, czytelnym krojem bezszeryfowym w opisach i nawigacji.",
+      colors:
+        "Ciepła, złamana biel i ciemna zieleń tworzą tło dla naturalnych faktur oraz kolorów ceramiki.",
+      components:
+        "Hero z fotografią, galerie kolekcji, przyciski kategorii i mobilna nawigacja katalogu.",
+    },
+    roles: ["Web Design", "UX", "Development"],
   },
 ];
 

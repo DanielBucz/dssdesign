@@ -1,10 +1,11 @@
+import { siteConfig } from "@/config/site";
+
 const navItems = [
   { label: "Projekty", href: "/projekty" },
   { label: "Usługi", href: "/#uslugi" },
   { label: "O nas", href: "/o-nas" },
   { label: "Kontakt", href: "/kontakt" },
 ];
-const socials = ["Instagram", "Behance", "LinkedIn"];
 
 export function Footer() {
   return (
@@ -26,20 +27,11 @@ export function Footer() {
 
       <address id="kontakt-info">
         <span>Napisz do nas</span>
-        <span>e-mail: do uzupełnienia</span>
-        <span>Telefon: do uzupełnienia</span>
+        <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+        <a href={`tel:${siteConfig.phone}`}>{siteConfig.phoneDisplay}</a>
       </address>
 
-      <div className="footer-socials">
-        <span>Obserwuj nas</span>
-        {socials.map((item) => (
-          <a key={item} href="/kontakt">
-            {item}
-          </a>
-        ))}
-      </div>
-
-      <p className="footer-legal">© 2026 Dobrze się składa. Dane kontaktowe robocze.</p>
+      <p className="footer-legal">© 2026 Dobrze się składa.</p>
     </footer>
   );
 }
