@@ -1,5 +1,49 @@
 @import "tailwindcss";
 
+.analytics-settings {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  color: #b9b9b1;
+  background: #000;
+  border: 0;
+  font: inherit;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.analytics-consent {
+  position: fixed;
+  z-index: 100;
+  bottom: 1rem;
+  right: 1rem;
+  width: min(34rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  background: #f5f4ef;
+  color: #000;
+  border: 1px solid #000;
+  box-shadow: 0 8px 40px #0006;
+}
+
+.analytics-consent h2 { margin: 0 0 0.75rem; font-size: 1.25rem; font-weight: 700; }
+.analytics-consent p { margin: 0; font-size: 0.9rem; line-height: 1.6; }
+.analytics-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.2rem; }
+.analytics-actions button {
+  flex: 1 1 auto;
+  padding: 0.8rem 1rem;
+  border: 1px solid #000;
+  background: #f5f4ef;
+  color: #000;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.analytics-actions button:hover { background: #dfff00; }
+
 :root {
   --color-black: #000000;
   --color-ink: #f7f7f3;
