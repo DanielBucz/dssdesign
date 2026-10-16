@@ -3,6 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 import { Analytics } from "@/components/Analytics";
+import { MobileContactBar } from "@/components/layout/MobileContactBar";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin-ext"],
@@ -32,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl" className={spaceGrotesk.variable}>
-      <body>{children}<Analytics /></body>
+      <body>{children}<Analytics /><MobileContactBar /></body>
     </html>
   );
 }

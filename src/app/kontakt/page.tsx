@@ -1,6 +1,7 @@
 import { pageMetadata } from "@/config/seo";
 import { PageShell } from "@/components/layout/PageShell";
 import { siteConfig } from "@/config/site";
+import { LeadForm } from "@/components/LeadForm";
 
 export const metadata = pageMetadata(
   "Kontakt — porozmawiajmy o Twojej stronie",
@@ -32,6 +33,23 @@ export default function ContactPage() {
             </div>
           </dl>
         </div>
+      </section>
+
+      <section className="services-section contact-form-section" aria-labelledby="contact-form-title" data-nav-theme="dark">
+        <div className="services-heading">
+          <div className="section-kicker light" aria-hidden="true">
+            <span>01</span>
+            <i />
+          </div>
+          <h2 id="contact-form-title" className="section-title light">
+            NAPISZ DO NAS<span className="accent-dot">.</span>
+          </h2>
+          <p className="audit-lead">
+            Wolisz zacząć od audytu? <a href="/#audyt">Zamów darmowy audyt strony <span aria-hidden="true">→</span></a>
+          </p>
+        </div>
+
+        <LeadForm variant="contact" />
       </section>
     </PageShell>
   );

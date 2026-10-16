@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import "@/lib/analytics";
 
 const measurementId = "G-G7SH0HC47Y";
 const storageKey = "dss-analytics-consent-v1";
@@ -8,8 +9,6 @@ type Consent = "granted" | "denied";
 
 declare global {
   interface Window {
-    dataLayer?: unknown[];
-    gtag?: (...args: unknown[]) => void;
     "ga-disable-G-G7SH0HC47Y"?: boolean;
   }
 }
@@ -75,7 +74,9 @@ export function Analytics() {
       const link = event.target instanceof Element ? event.target.closest("a") : null;
       const href = link?.getAttribute("href") || "";
       const method = href.startsWith("tel:") ? "phone" : href.startsWith("mailto:") ? "email" : null;
-      if (method) window.gtag?.("event", "contact_click", { contact_method: method });
+      if (!method) return;
+      const location = link?.closest("[data-contact-location]")?.getAttribute("data-contact-location") || "page";
+      window.gtag?.("event", "contact_click", { contact_method: method, contact_location: location });
     };
     document.addEventListener("click", trackContact);
     return () => document.removeEventListener("click", trackContact);
@@ -101,7 +102,7 @@ export function Analytics() {
       {open && (
         <section id="analytics-consent" className="analytics-consent" role="region" aria-labelledby="analytics-title">
           <h2 id="analytics-title">Czy możemy mierzyć odwiedziny?</h2>
-          <p>Za Twoją zgodą użyjemy Google Analytics i plików cookie, by sprawdzać odwiedziny, źródła ruchu oraz kliknięcia telefonu i e-maila. Dane o korzystaniu ze strony trafią do Google. Analityka uruchomi się dopiero po akceptacji. Zgodę możesz wycofać w ustawieniach prywatności.</p>
+          <p>Za Twoją zgodą użyjemy Google Analytics i plików cookie, by sprawdzać odwiedziny, źródła ruchu, kliknięcia telefonu i e-maila oraz wysłanie formularzy. Dane o korzystaniu ze strony trafią do Google. Analityka uruchomi się dopiero po akceptacji. Zgodę możesz wycofać w ustawieniach prywatności. Więcej w <a href="/polityka-prywatnosci">polityce prywatności</a>.</p>
           <div className="analytics-actions">
             <button type="button" onClick={() => choose("denied")}>Odrzucam</button>
             <button type="button" onClick={() => choose("granted")}>Akceptuję analitykę</button>

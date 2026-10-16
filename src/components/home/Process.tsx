@@ -10,7 +10,7 @@ export function Process() {
     >
       <div className="process-intro">
         <div className="section-kicker" aria-hidden="true">
-          <span>03</span>
+          <span>04</span>
           <i />
         </div>
         <div>

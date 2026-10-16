@@ -5,7 +5,7 @@ import { pageUrl } from "@/config/seo";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/projekty", "/o-nas", "/kontakt"].map((route) => ({
+  const staticRoutes = ["", "/projekty", "/o-nas", "/kontakt", "/polityka-prywatnosci"].map((route) => ({
     url: pageUrl(route),
   }));
 
