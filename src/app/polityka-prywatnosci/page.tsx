@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
         <h1>
           Twoje dane<span className="accent-dot">.</span>
         </h1>
-        <p>Ostatnia aktualizacja: [data].</p>
+        <p>Ostatnia aktualizacja: 3 listopada 2026.</p>
       </section>
 
       <article className="legal-page dark-page" data-nav-theme="dark">
