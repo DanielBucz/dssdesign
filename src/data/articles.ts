@@ -24,9 +24,9 @@ export const articles: Article[] = [
   {
     slug: "ile-kosztuje-strona-internetowa",
     title: "Ile kosztuje strona internetowa dla małej firmy?",
-    seoTitle: "Ile kosztuje strona internetowa dla małej firmy?",
+    seoTitle: "Ile kosztuje strona internetowa?",
     description:
-      "Landing page od 1000 zł, strona firmowa od 2000 zł, opieka od 150 zł miesięcznie. Sprawdź, od czego zależy cena strony internetowej i o co zapytać przed wyceną.",
+      "Landing page od 1000 zł, strona firmowa od 2000 zł, opieka od 150 zł/mies. Sprawdź, od czego zależy cena strony i o co zapytać przed wyceną.",
     date: "2026-11-03",
     readingTime: "5 min czytania",
     lead:
@@ -98,7 +98,7 @@ export const articles: Article[] = [
     title: "Landing page czy strona firmowa – która wersja jest dla Twojej firmy?",
     seoTitle: "Landing page czy strona firmowa?",
     description:
-      "Landing page czy strona firmowa? Porównujemy cenę, czas realizacji i zastosowanie, żeby mała firma usługowa mogła wybrać wersję dopasowaną do swojej oferty.",
+      "Landing page czy strona firmowa? Porównujemy cenę, czas realizacji i zastosowanie, żeby mała firma usługowa wybrała wersję dla swojej oferty.",
     date: "2026-11-03",
     readingTime: "4 min czytania",
     lead:
@@ -159,7 +159,7 @@ export const articles: Article[] = [
   {
     slug: "proces-tworzenia-strony-internetowej",
     title: "Jak wygląda proces tworzenia strony internetowej krok po kroku?",
-    seoTitle: "Proces tworzenia strony internetowej krok po kroku",
+    seoTitle: "Proces tworzenia strony internetowej",
     description:
       "Poznajemy, projektujemy, budujemy, odpalamy. Zobacz, jak wygląda proces tworzenia strony internetowej krok po kroku i co przygotować, żeby poszło sprawnie.",
     date: "2026-11-03",
@@ -222,9 +222,9 @@ export const articles: Article[] = [
   {
     slug: "strona-internetowa-dla-trenera-personalnego",
     title: "Co powinna mieć strona internetowa dla trenera personalnego?",
-    seoTitle: "Strona internetowa dla trenera personalnego – co powinna mieć",
+    seoTitle: "Strona dla trenera personalnego",
     description:
-      "Pakiety z cenami, prawdziwe zdjęcia, opinie i prosty kontakt z telefonu. Sprawdź, co powinna mieć strona internetowa dla trenera personalnego, żeby przynosiła zapisy.",
+      "Pakiety z cenami, prawdziwe zdjęcia, opinie i kontakt jednym kliknięciem. Sprawdź, co powinna mieć strona trenera personalnego, żeby dawała zapisy.",
     date: "2026-11-03",
     readingTime: "5 min czytania",
     lead:

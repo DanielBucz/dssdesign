@@ -3,7 +3,7 @@ import { pageMetadata } from "@/config/seo";
 
 export const metadata = pageMetadata(
   "Opieka nad stroną internetową",
-  "Zmiany, aktualizacje i rozwój Twojej strony internetowej po starcie, w abonamencie od 150 zł miesięcznie. Napisz WYCENA, żeby ustalić zakres opieki dla Twojej strony.",
+  "Zmiany, aktualizacje i rozwój strony internetowej po starcie, w abonamencie od 150 zł miesięcznie. Napisz do nas i ustalmy zakres opieki.",
   "/opieka-i-rozwoj-strony/",
 );
 

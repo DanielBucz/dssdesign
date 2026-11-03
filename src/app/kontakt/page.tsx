@@ -7,7 +7,7 @@ import { priceFaq } from "@/data/faq";
 
 export const metadata = pageMetadata(
   "Wycena strony internetowej - kontakt",
-  "Chcesz wiedzieć, ile kosztuje Twoja strona internetowa? Napisz WYCENA na Instagramie lub przez formularz i otrzymaj widełki cenowe po krótkiej rozmowie.",
+  "Ile kosztuje Twoja strona internetowa? Wypełnij krótki formularz albo zadzwoń: 668 974 402. Odpowiemy z widełkami cenowymi po krótkiej rozmowie.",
   "/kontakt/",
 );
 

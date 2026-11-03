@@ -9,5 +9,5 @@ export const siteConfig = {
   // Klucz Web3Forms (https://web3forms.com) ustawiany w .env.local jako NEXT_PUBLIC_WEB3FORMS_KEY.
   web3formsKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "",
   description:
-    "Tworzymy strony internetowe dla firm usługowych, które przynoszą zapytania. Landing page od 1000 zł, strona firmowa od 2000 zł. Napisz AUDYT albo WYCENA.",
+    "Tworzymy strony internetowe dla firm usługowych, które przynoszą zapytania. Landing page od 1000 zł, strona firmowa od 2000 zł. Zamów bezpłatną wycenę.",
 };

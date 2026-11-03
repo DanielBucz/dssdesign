@@ -52,7 +52,7 @@ export const projects: Project[] = [
     headline: "strona internetowa dla firmy transportowej",
     seoTitle: "Strona dla firmy transportowej",
     seoDescription:
-      "Zobacz, jak zaprojektowaliśmy stronę B2B dla firmy transportowo-spedycyjnej Trans Adviser z Lublina: usługi, języki i content SEO. Napisz WYCENA.",
+      "Strona B2B dla firmy transportowo-spedycyjnej Trans Adviser z Lublina: usługi, wersje językowe i content SEO. Zobacz projekt i zamów wycenę.",
     cta: "Potrzebujesz podobnej strony dla swojej firmy? Napisz WYCENA.",
     palette: "logistics",
     imageSrc: "/images/case-studies/trans-adviser/home-hero.png",
@@ -103,7 +103,7 @@ export const projects: Project[] = [
     headline: "strona internetowa dla firmy detailingowej",
     seoTitle: "Strona dla firmy detailingowej",
     seoDescription:
-      "Landing page dla Buczek Poleruje: detailing samochodowy w Lublinie z ofertą usług, realizacjami i kalkulatorem wyceny. Zobacz projekt i napisz WYCENA.",
+      "Landing page dla Buczek Poleruje: detailing samochodowy w Lublinie z ofertą, realizacjami i kalkulatorem wyceny. Zobacz projekt i zamów wycenę.",
     cta: "Potrzebujesz podobnej strony dla swojej usługi? Napisz WYCENA.",
     note:
       "Buczek Poleruje to własna marka właściciela studia, a nie zewnętrzny klient. Pokazujemy ją, bo to działający landing page, na którym sprawdzamy w praktyce to, co proponujemy klientom.",
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     headline: "strona internetowa dla pracowni ceramiki",
     seoTitle: "Strona dla pracowni ceramiki",
     seoDescription:
-      "Strona dla pracowni ceramiki Handmade by Martula art: kolekcje inspirowane naturą, katalog prac z kategoriami i duże zdjęcia ceramiki. Napisz WYCENA.",
+      "Strona dla pracowni ceramiki Handmade by Martula art: kolekcje inspirowane naturą, katalog prac i duże zdjęcia ceramiki. Zobacz cały projekt.",
     cta: "Masz podobny projekt rękodzieła? Napisz WYCENA.",
     palette: "interior",
     imageSrc: "/images/case-studies/handmade-by-martula/home-hero.png",
@@ -208,7 +208,7 @@ export const projects: Project[] = [
     headline: "strona internetowa dla trenera personalnego",
     seoTitle: "Strona dla trenera personalnego",
     seoDescription:
-      "Zobacz, jak zaprojektowaliśmy stronę dla trenerki personalnej: oferta z trzema pakietami i ceną przy każdym. Mniej pytań o cenę, więcej konkretnych zapytań. Napisz WYCENA.",
+      "Strona dla trenerki personalnej: trzy pakiety z ceną przy każdym, mniej pytań o cenę, więcej konkretnych zapytań. Zobacz projekt i zamów wycenę.",
     cta: "Masz podobny problem z pytaniami o cenę? Napisz WYCENA.",
     proof:
       "Stronę pokazaliśmy krok po kroku w karuzeli case study na naszym Instagramie.",

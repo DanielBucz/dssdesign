@@ -3,7 +3,7 @@ import { pageMetadata } from "@/config/seo";
 
 export const metadata = pageMetadata(
   "Landing page dla firmy - cena",
-  "Landing page dla jednej usługi albo kampanii, gotowy w 1-2 tygodnie, od 1000 zł. Zobacz przykład realizacji i napisz WYCENA, żeby dostać widełki cenowe pod swój projekt.",
+  "Landing page dla jednej usługi albo kampanii, gotowy w 1–2 tygodnie, od 1000 zł. Zobacz przykład realizacji i zamów bezpłatną wycenę projektu.",
   "/landing-page/",
 );
 
