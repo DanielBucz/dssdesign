@@ -222,7 +222,7 @@ export const articles: Article[] = [
   {
     slug: "strona-internetowa-dla-trenera-personalnego",
     title: "Co powinna mieć strona internetowa dla trenera personalnego?",
-    seoTitle: "Strona dla trenera personalnego",
+    seoTitle: "Co powinna mieć strona trenera personalnego?",
     description:
       "Pakiety z cenami, prawdziwe zdjęcia, opinie i kontakt jednym kliknięciem. Sprawdź, co powinna mieć strona trenera personalnego, żeby dawała zapisy.",
     date: "2026-11-03",
