@@ -150,48 +150,48 @@ export const projects: Project[] = [
     title: "Handmade by Martula art",
     category: "Web Design / UX / Development",
     year: "2026",
-    type: "Projekt w trakcie",
-    status: "in-progress",
+    type: "Real Client Project",
     description:
-      "Powstająca strona pracowni ceramiki inspirowanej naturą — z kolekcjami, katalogiem prac i spokojną oprawą wizualną.",
+      "Strona pracowni ceramiki inspirowanej naturą — z kolekcjami, katalogiem prac i spokojną oprawą wizualną.",
     industry: "Strona dla pracowni ceramiki i rękodzieła.",
-    headline: "strona internetowa dla pracowni ceramiki (projekt w trakcie)",
+    headline: "strona internetowa dla pracowni ceramiki",
     seoTitle: "Strona dla pracowni ceramiki",
     seoDescription:
-      "Projekt w trakcie: strona dla pracowni ceramiki Handmade by Martula art, z kolekcjami inspirowanymi naturą i dużymi zdjęciami prac. Premiera wkrótce.",
+      "Strona dla pracowni ceramiki Handmade by Martula art: kolekcje inspirowane naturą, katalog prac z kategoriami i duże zdjęcia ceramiki. Napisz WYCENA.",
     cta: "Masz podobny projekt rękodzieła? Napisz WYCENA.",
     palette: "interior",
     imageSrc: "/images/case-studies/handmade-by-martula/home-hero.png",
     imageAlt:
-      "Widok strony Handmade by Martula z nagłówkiem Kwiaty, które zostają i zdjęciem błękitnych ceramicznych kwiatów.",
+      "Rzut strony głównej Martula Art z nagłówkiem Ceramika inspirowana naturą i zdjęciem bukietu ceramicznych kwiatów.",
     gallery: [
       {
-        src: "/images/case-studies/handmade-by-martula/collections.png",
-        alt: "Widok kolekcji Handmade by Martula ze zdjęciami ceramicznych bukietów.",
-        label: "Kolekcje — widok roboczy",
+        src: "/images/case-studies/handmade-by-martula/selected-works.png",
+        alt: "Rzut sekcji Wybrane prace z ceramicznymi filiżankami z motywem domków i żółtymi świecznikami.",
+        label: "Wybrane prace",
         orientation: "landscape",
       },
       {
-        src: "/images/case-studies/handmade-by-martula/mobile-categories.png",
-        alt: "Mobilny widok kategorii Formy dekoracyjne z opisem i wyborem kategorii ceramiki.",
-        label: "Kategorie na telefonie — widok roboczy",
+        src: "/images/case-studies/handmade-by-martula/mobile-catalog.png",
+        alt: "Mobilny rzut katalogu Prace ceramiczne z przyciskami kategorii ceramiki.",
+        label: "Katalog na telefonie",
         orientation: "portrait",
       },
     ],
+    externalUrl: "https://martula-art.pl",
     challenge:
       "Pokazać charakter ręcznie tworzonej ceramiki i uporządkować różnorodne prace w czytelne kategorie oraz kolekcje inspirowane naturą.",
     solution:
       "Projekt łączy duże fotografie prac, wyraziste szeryfowe nagłówki i spokojne tło. Kolekcje oraz nawigacja po kategoriach pomagają odkrywać ceramiczne kwiaty, naczynia i formy dekoracyjne również na telefonie.",
-    // Po premierze: usunąć status "in-progress" i dopisać prawdziwy efekt strony.
+    // TODO [WYNIK]: dopisać potwierdzony efekt strony Martula Art (zapytania, sprzedaż), jeśli będzie dostępny.
     effect:
-      "Projekt jest w trakcie realizacji. Strona marki ceramicznej powstaje pod adresem martula-art.pl, z hasłem „Kwiaty, które zostają”. Prezentowane widoki pokazują aktualny kierunek wizualny strony głównej, kolekcji i mobilnego katalogu prac.",
+      "Strona marki ceramicznej działa pod adresem martula-art.pl, z hasłem „Ceramika inspirowana naturą”. Prezentowane widoki pokazują stronę główną z wybranymi pracami i mobilny katalog z podziałem na kategorie ceramiki.",
     system: {
       typography:
         "Duże szeryfowe nagłówki zestawione z lekkim, czytelnym krojem bezszeryfowym w opisach i nawigacji.",
       colors:
-        "Ciepła, złamana biel i ciemna zieleń tworzą tło dla naturalnych faktur oraz kolorów ceramiki.",
+        "Ciepła, złamana biel i głęboki brąz tworzą spokojne tło dla naturalnych faktur oraz kolorów ceramiki.",
       components:
-        "Hero z fotografią, galerie kolekcji, przyciski kategorii i mobilna nawigacja katalogu.",
+        "Hero z fotografią, sekcja wybranych prac, kolekcje, przyciski kategorii i mobilny katalog prac.",
     },
     roles: ["Web Design", "UX", "Development"],
   },

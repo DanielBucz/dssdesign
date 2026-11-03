@@ -6,7 +6,7 @@ import { projects } from "@/data/projects";
 
 export const metadata = pageMetadata(
   "Realizacje stron internetowych dla firm",
-  "Zobacz nasze realizacje: strona dla firmy transportowej, landing page detailingu i projekt w trakcie dla pracowni ceramiki. Napisz WYCENA i dołącz do grona klientów.",
+  "Zobacz nasze realizacje: strona dla firmy transportowej, landing page detailingu, strona trenerki personalnej i pracowni ceramiki. Napisz WYCENA i dołącz do grona klientów.",
   "/projekty/",
 );
 
