@@ -1,4 +1,12 @@
-export function FinalCTA() {
+type FinalCTAProps = {
+  lead?: string;
+  linkLabel?: string;
+};
+
+export function FinalCTA({
+  lead = "Napisz WYCENA albo zadzwoń. Porozmawiajmy o stronie dla Twojej firmy.",
+  linkLabel = "Porozmawiajmy",
+}: FinalCTAProps) {
   return (
     <section
       className="final-cta"
@@ -16,11 +24,9 @@ export function FinalCTA() {
         </h2>
       </div>
       <div className="final-cta-side">
-        <p>
-          Napisz lub zadzwoń. Porozmawiajmy o współpracy.
-        </p>
-        <a href="/kontakt">
-          Porozmawiajmy <span aria-hidden="true">→</span>
+        <p>{lead}</p>
+        <a href="/kontakt/">
+          {linkLabel} <span aria-hidden="true">→</span>
         </a>
       </div>
     </section>

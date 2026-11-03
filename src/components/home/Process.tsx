@@ -18,8 +18,8 @@ export function Process() {
             JAK PRACUJEMY<span className="accent-dot">.</span>
           </h2>
           <p>
-            Sprawdzony proces, dzięki któremu wiemy, że dowozimy efekt bez
-            przypadkowych decyzji.
+            Cztery etapy od pierwszej rozmowy do strony, która zbiera zapytania.
+            Każdy kończy się konkretnym efektem.
           </p>
         </div>
       </div>
@@ -30,6 +30,7 @@ export function Process() {
             <span className="process-number">{step.number}</span>
             <h3>{step.title}</h3>
             <p>{step.description}</p>
+            <p className="process-effect">{step.effect}</p>
           </li>
         ))}
       </ol>

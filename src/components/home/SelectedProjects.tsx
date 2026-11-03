@@ -27,11 +27,11 @@ export function SelectedProjects() {
 
         <div className="projects-intro">
           <p>
-            Każdy projekt to osobny układ decyzji: strategia, obraz, rytm i kod.
-            Zobacz strony, które stworzyliśmy dla naszych klientów.
+            Strona B2B dla firmy transportowej, landing page dla detailingu
+            i strona pracowni ceramiki. Zobacz, jak wyglądają w praktyce.
           </p>
-          <a href="/projekty" aria-label="Zobacz wszystkie projekty">
-            Zobacz wszystkie projekty <span aria-hidden="true">→</span>
+          <a href="/projekty/">
+            Zobacz wszystkie realizacje <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

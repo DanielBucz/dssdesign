@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Tworzenie stron internetowych | Dobrze się składa.",
+    default: "Strony internetowe dla firm usługowych | Dobrze się składa.",
     template: "%s | Dobrze się składa.",
   },
   description: siteConfig.description,

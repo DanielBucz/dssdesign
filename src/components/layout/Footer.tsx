@@ -3,7 +3,10 @@ import { siteConfig } from "@/config/site";
 const navItems = [
   { label: "Projekty", href: "/projekty" },
   { label: "Usługi", href: "/#uslugi" },
+  { label: "Landing page", href: "/landing-page/" },
+  { label: "Opieka nad stroną", href: "/opieka-i-rozwoj-strony/" },
   { label: "O nas", href: "/o-nas" },
+  { label: "Blog", href: "/blog/" },
   { label: "Kontakt", href: "/kontakt" },
 ];
 

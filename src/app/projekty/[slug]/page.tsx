@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { FinalCTA } from "@/components/home/FinalCTA";
 import { PageShell } from "@/components/layout/PageShell";
 import { ProjectVisual } from "@/components/projects/ProjectVisual";
 import { pageMetadata } from "@/config/seo";
+import { siteConfig } from "@/config/site";
 import { getProjectBySlug, projects } from "@/data/projects";
 
 type ProjectPageProps = {
@@ -28,8 +30,8 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   }
 
   return pageMetadata(
-    `${project.title} — ${project.status === "in-progress" ? "projekt w trakcie" : "projekt strony"}`,
-    project.description,
+    project.seoTitle,
+    project.seoDescription,
     `/projekty/${project.slug}/`,
     project.imageSrc,
   );
@@ -52,7 +54,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <header className="case-hero">
           <div>
             <p className="subpage-kicker">{project.type}</p>
-            <h1>{project.title}</h1>
+            <h1>
+              {project.title}
+              <span className="h1-sub"> – {project.headline}</span>
+            </h1>
           </div>
           <dl className="case-meta">
             <div>
@@ -89,39 +94,39 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <p>{project.challenge}</p>
         </section>
 
+        {project.note ? (
+          <section className="case-section case-note">
+            <h2>Uczciwie</h2>
+            <p>{project.note}</p>
+          </section>
+        ) : null}
+
         <section className="case-section">
           <h2>Rozwiązanie</h2>
           <p>{project.solution}</p>
         </section>
 
+        {project.system ? (
         <section className="case-system" aria-labelledby="system-title">
           <h2 id="system-title">Design system</h2>
           <div>
             <span>Typography</span>
-            <p>
-              {project.system?.typography ??
-                "Duży grotesk, krótkie komunikaty i mocna hierarchia sekcji."}
-            </p>
+            <p>{project.system.typography}</p>
           </div>
           <div>
             <span>Colors</span>
-            <p>
-              {project.system?.colors ??
-                "Czerń, złamana biel, akcent neon yellow-green oraz paleta projektu."}
-            </p>
+            <p>{project.system.colors}</p>
           </div>
           <div>
             <span>Components</span>
-            <p>
-              {project.system?.components ??
-                "Moduły hero, duże karty, proste CTA i rytm oparty o linie."}
-            </p>
+            <p>{project.system.components}</p>
           </div>
         </section>
+        ) : null}
 
+        {project.gallery?.length ? (
         <section className="case-gallery" aria-label="Rzuty projektu">
-          {project.gallery?.length ? (
-            project.gallery.map((item) => (
+          {project.gallery.map((item) => (
               <figure
                 className="case-shot"
                 data-orientation={item.orientation ?? "landscape"}
@@ -130,25 +135,46 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
                 <figcaption>{item.label}</figcaption>
               </figure>
-            ))
-          ) : (
-            <>
-              <ProjectVisual project={project} size="detail" />
-              <ProjectVisual project={project} size="detail" />
-            </>
-          )}
+          ))}
         </section>
+        ) : null}
 
         <section className="case-section">
           <h2>{project.status === "in-progress" ? "Aktualny etap" : "Efekt"}</h2>
           <p>{project.effect}</p>
         </section>
 
+        {project.proof ? (
+          <section className="case-section">
+            <h2>Gdzie to zobaczyć</h2>
+            <p>
+              {project.proof}
+              {siteConfig.instagramUrl ? (
+                <>
+                  {" "}
+                  <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">Zobacz na Instagramie →</a>
+                </>
+              ) : null}
+            </p>
+          </section>
+        ) : null}
+
+        {project.related ? (
+          <section className="case-section">
+            <h2>Pakiet</h2>
+            <p>
+              Ta strona to przykład pakietu landing page: jedna strona pod jedną ofertę.{" "}
+              <a href={project.related.href}>{project.related.label} →</a>
+            </p>
+          </section>
+        ) : null}
+
         <nav className="next-project" aria-label="Następny projekt">
-          <a href="/projekty">Wszystkie projekty</a>
-          <a href={`/projekty/${nextProject.slug}`}>Next project → {nextProject.title}</a>
+          <a href="/projekty/">Wszystkie realizacje</a>
+          <a href={`/projekty/${nextProject.slug}/`}>Następny projekt → {nextProject.title}</a>
         </nav>
       </article>
+      <FinalCTA lead={project.cta} linkLabel="Napisz WYCENA" />
     </PageShell>
   );
 }

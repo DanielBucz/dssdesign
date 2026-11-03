@@ -5,10 +5,10 @@ import Link from "next/link";
 import { PointerEvent } from "react";
 
 const headlineLines = [
-  { text: "TWORZYMY", accent: false },
-  { text: "MARKI,", accent: true },
-  { text: "KTÓRE ZOSTAJĄ", accent: false },
-  { text: "W PAMIĘCI.", accent: false },
+  { text: "STRONY INTERNETOWE", accent: false },
+  { text: "DLA FIRM USŁUGOWYCH,", accent: false },
+  { text: "KTÓRE PRZYNOSZĄ", accent: false },
+  { text: "KLIENTÓW.", accent: true },
 ];
 
 export function Hero() {
@@ -31,7 +31,7 @@ export function Hero() {
     <section className="hero" aria-labelledby="hero-title" onPointerMove={handlePointerMove}>
       <div className="hero-grid" aria-hidden="true" />
       <div className="hero-copy">
-        <p className="eyebrow">WEB DESIGN / UX/UI / DEVELOPMENT</p>
+        <p className="eyebrow">LANDING PAGE / STRONY FIRMOWE / OPIEKA</p>
         <h1 id="hero-title" className="hero-title">
           {headlineLines.map((line, index) => (
             <motion.span
@@ -41,7 +41,7 @@ export function Hero() {
               animate={reduceMotion ? undefined : { y: 0, opacity: 1 }}
               transition={{ duration: 0.75, delay: index * 0.11, ease: [0.22, 1, 0.36, 1] }}
             >
-              {line.text}
+              {line.text}{" "}
             </motion.span>
           ))}
         </h1>
@@ -52,8 +52,8 @@ export function Hero() {
           animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
         >
-          Projektujemy i tworzymy strony internetowe dla firm, landing page
-          i interfejsy UX/UI. Łączymy strategię, design i technologię.
+          Tworzymy strony internetowe dla małych firm usługowych: landing page
+          od 1000 zł, strona firmowa od 2000 zł. Dobrze się składa.
         </motion.p>
 
         <motion.div

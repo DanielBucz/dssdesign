@@ -1,4 +1,5 @@
 import { LeadForm } from "@/components/LeadForm";
+import { siteConfig } from "@/config/site";
 
 type AuditSectionProps = {
   number: string;
@@ -21,7 +22,9 @@ export function AuditSection({ number }: AuditSectionProps) {
           DARMOWY AUDYT STRONY<span className="accent-dot">.</span>
         </h2>
         <p className="audit-lead">
-          Podaj adres strony. Sprawdzimy ją i wyślemy 3 konkretne poprawki.
+          Napisz AUDYT <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">na Instagramie</a> albo Facebooku i dodaj adres swojej
+          strony albo zostaw go w formularzu. W ciągu 24 godzin odpiszemy
+          z 3 konkretnymi poprawkami do wdrożenia.
         </p>
       </div>
 
