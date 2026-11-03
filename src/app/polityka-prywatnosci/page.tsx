@@ -49,8 +49,7 @@ export default function PrivacyPolicyPage() {
         <ul>
           <li>Web3Forms: usługa przekazująca wiadomości z formularzy na naszą skrzynkę e-mail.</li>
           <li>Google Ireland Ltd.: Google Analytics 4, wyłącznie po wyrażeniu zgody.</li>
-          <li>[Nazwa dostawcy hostingu]: hosting strony.</li>
-          <li>[Nazwa dostawcy poczty]: obsługa skrzynki e-mail.</li>
+          <li>SEOHOST (<a href="https://seohost.pl" target="_blank" rel="noopener noreferrer">seohost.pl</a>): hosting strony i obsługa skrzynki e-mail.</li>
         </ul>
         <p>
           Część dostawców może przetwarzać dane poza Europejskim Obszarem Gospodarczym. Odbywa się to na
