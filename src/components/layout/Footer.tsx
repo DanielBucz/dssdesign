@@ -3,7 +3,10 @@ import { siteConfig } from "@/config/site";
 const navItems = [
   { label: "Projekty", href: "/projekty" },
   { label: "Usługi", href: "/#uslugi" },
+  { label: "Landing page", href: "/landing-page/" },
+  { label: "Opieka nad stroną", href: "/opieka-i-rozwoj-strony/" },
   { label: "O nas", href: "/o-nas" },
+  { label: "Blog", href: "/blog/" },
   { label: "Kontakt", href: "/kontakt" },
 ];
 
@@ -31,7 +34,18 @@ export function Footer() {
         <a href={`tel:${siteConfig.phone}`}>{siteConfig.phoneDisplay}</a>
       </address>
 
-      <p className="footer-legal">© 2026 Dobrze się składa.</p>
+      {siteConfig.instagramUrl && (
+        <div className="footer-socials">
+          <span>Obserwuj</span>
+          <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">
+            Instagram <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      )}
+
+      <p className="footer-legal">
+        © 2026 Dobrze się składa. <a href="/polityka-prywatnosci">Polityka prywatności</a>
+      </p>
     </footer>
   );
 }

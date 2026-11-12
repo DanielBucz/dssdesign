@@ -18,7 +18,7 @@ export function Services() {
         </h2>
       </div>
 
-      <div className="services-list">
+      <div className="services-list pricing-list">
         {services.map((service) => (
           <article className="service-item" key={service.title}>
             <span className="service-symbol" aria-hidden="true">
@@ -31,6 +31,9 @@ export function Services() {
                 <li key={point}>{point}</li>
               ))}
             </ul>
+            <a className="service-link" href={service.href}>
+              {service.linkLabel} <span aria-hidden="true">→</span>
+            </a>
           </article>
         ))}
       </div>

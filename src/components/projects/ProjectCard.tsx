@@ -18,7 +18,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       <div className="project-meta">
         <h3>{project.title}</h3>
-        <p>{project.description}</p>
+        <div>
+          <p className="project-industry">{project.industry}</p>
+          <p>{project.description}</p>
+        </div>
       </div>
     </article>
   );

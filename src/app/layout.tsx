@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
+import { Analytics } from "@/components/Analytics";
+import { MobileContactBar } from "@/components/layout/MobileContactBar";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin-ext"],
@@ -12,8 +14,8 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Tworzenie stron internetowych | Dobrze się składa.",
-    template: "%s | Dobrze się składa.",
+    default: "Strony internetowe dla firm usługowych | Dobrze się składa",
+    template: "%s | Dobrze się składa",
   },
   description: siteConfig.description,
   robots: { index: true, follow: true },
@@ -31,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl" className={spaceGrotesk.variable}>
-      <body>{children}</body>
+      <body>{children}<Analytics /><MobileContactBar /></body>
     </html>
   );
 }

@@ -6,7 +6,8 @@ export function pageUrl(path = "/") {
 }
 
 export function pageMetadata(title: string, description: string, path: string, image?: string): Metadata {
-  const fullTitle = `${title} | ${siteConfig.name}`;
+  // Bez kropki z nazwy marki: krótszy title w wynikach Google.
+  const fullTitle = `${title} | ${siteConfig.name.replace(/\.$/, "")}`;
   return {
     title: { absolute: fullTitle },
     description,
