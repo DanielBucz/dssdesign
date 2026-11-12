@@ -8,9 +8,8 @@ export const metadata = pageMetadata(
   "/polityka-prywatnosci/",
 );
 
-// TODO przed publikacją: uzupełnij dane w nawiasach [ ] i daj tekst do sprawdzenia osobie znającej RODO.
 // Jeśli dodasz piksel Meta lub inne narzędzie, dopisz je w sekcjach „Odbiorcy” i „Cookies” oraz w banerze zgody.
-const administrator = "[Imię i nazwisko / nazwa firmy], [adres], NIP: [NIP]";
+const administrator = "Daniel Buczkowski";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -20,14 +19,15 @@ export default function PrivacyPolicyPage() {
         <h1>
           Twoje dane<span className="accent-dot">.</span>
         </h1>
-        <p>Ostatnia aktualizacja: 3 listopada 2026.</p>
+        <p>Ostatnia aktualizacja: 12 listopada 2026.</p>
       </section>
 
       <article className="legal-page dark-page" data-nav-theme="dark">
         <h2>1. Administrator danych</h2>
         <p>
-          Administratorem danych osobowych jest {administrator} (dalej: „Administrator”). W sprawach danych
-          osobowych napisz na <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
+          Administratorem danych osobowych jest {administrator}, osoba fizyczna prowadząca studio Dobrze się
+          składa w ramach działalności nierejestrowanej (dalej: „Administrator”). W sprawach danych osobowych
+          napisz na <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
         </p>
 
         <h2>2. Jakie dane przetwarzamy</h2>
@@ -54,13 +54,13 @@ export default function PrivacyPolicyPage() {
         <p>
           Część dostawców może przetwarzać dane poza Europejskim Obszarem Gospodarczym. Odbywa się to na
           podstawie decyzji Komisji Europejskiej (np. EU-US Data Privacy Framework) lub standardowych klauzul
-          umownych. [Zweryfikuj u każdego dostawcy.]
+          umownych.
         </p>
 
         <h2>5. Jak długo przechowujemy dane</h2>
         <ul>
-          <li>Dane z zapytań: przez czas korespondencji, a później do [12 miesięcy], chyba że dojdzie do współpracy.</li>
-          <li>Dane analityczne: zgodnie z ustawieniem przechowywania w Google Analytics ([2 / 14] miesięcy).</li>
+          <li>Dane z zapytań: przez czas korespondencji, a później do 12 miesięcy, chyba że dojdzie do współpracy.</li>
+          <li>Dane analityczne: zgodnie z ustawieniem przechowywania w Google Analytics, czyli 2 miesiące.</li>
         </ul>
 
         <h2>6. Twoje prawa</h2>
