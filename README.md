@@ -45,6 +45,6 @@ Google Analytics 4: `G-G7SH0HC47Y`. Integracja znajduje się w `src/components/A
 - Zdarzenia `contact_form_submit` (formularz na /kontakt) i `audit_form_submit` (formularz „Darmowy audyt strony”) są wysyłane dopiero po potwierdzeniu wysyłki przez Web3Forms. W GA4 oznacz je jako kluczowe zdarzenia.
 - W GA4 pozostaw włączony Pomiar zaawansowany → Wyświetlenia strony → zmiany strony na podstawie zdarzeń historii przeglądarki. Obsługuje to przejścia Next.js bez ręcznego dublowania odsłon.
 
-Po `npm run build` prześlij **zawartość** folderu `out` na hosting. Nie dodawaj drugiej kopii tagu w panelu hostingu.
+Wdrożenie jest automatyczne: każdy push do `main` uruchamia `.github/workflows/deploy.yml`, który buduje stronę i wgrywa folder `out` na SEOHOST przez FTP (sekrety opisane w tym pliku). Ręcznie: po `npm run build` prześlij **zawartość** folderu `out` na hosting. Nie dodawaj drugiej kopii tagu w panelu hostingu.
 
 Po publikacji sprawdź w prywatnym oknie: brak żądań do Google Analytics/Tag Manager przed zgodą i po odmowie; po akceptacji widoczność wizyty oraz przejść między podstronami w raporcie czasu rzeczywistego/DebugView. Kliknij telefon i e-mail, aby zweryfikować `contact_click`. Wycofaj zgodę i sprawdź brak dalszego pomiaru po przeładowaniu. Blokery reklam mogą uniemożliwić pomiar.
