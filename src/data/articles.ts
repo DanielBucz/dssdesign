@@ -1,10 +1,22 @@
-// Linki w treści: [tekst](/adres/) — renderuje je komponent RichText.
+// Linki w treści: [tekst](/adres/), pogrubienia: **tekst** — renderuje je komponent RichText.
+
+export type ArticleTable = {
+  caption: string;
+  head: string[];
+  rows: string[][];
+};
 
 export type ArticleSection = {
   heading: string;
   paragraphs: string[];
+  table?: ArticleTable;
   list?: string[];
   after?: string[];
+};
+
+export type ArticleFaq = {
+  question: string;
+  answer: string;
 };
 
 export type Article = {
@@ -16,6 +28,7 @@ export type Article = {
   readingTime: string;
   lead: string;
   sections: ArticleSection[];
+  faq?: ArticleFaq[];
   cta: string;
   related: string[];
 };
@@ -24,19 +37,28 @@ export const articles: Article[] = [
   {
     slug: "ile-kosztuje-strona-internetowa",
     title: "Ile kosztuje strona internetowa dla małej firmy?",
-    seoTitle: "Ile kosztuje strona internetowa?",
+    seoTitle: "Ile kosztuje strona internetowa? Cennik",
     description:
-      "Landing page od 1000 zł, strona firmowa od 2000 zł, opieka od 150 zł/mies. Sprawdź, od czego zależy cena strony i o co zapytać przed wyceną.",
+      "Landing page od 1000 zł, strona firmowa od 2000 zł. Sprawdź, co wpływa na cenę strony internetowej i zamów bezpłatną wycenę dla swojej firmy.",
     date: "2026-11-03",
     readingTime: "5 min czytania",
     lead:
       "Krótko: u nas landing page kosztuje od 1000 zł, strona firmowa od 2000 zł, a opieka nad stroną od 150 zł miesięcznie. Poniżej wyjaśniamy, skąd biorą się te kwoty, co podnosi cenę i jak nie przepłacić.",
     sections: [
       {
-        heading: "Ceny w skrócie",
+        heading: "Cennik stron internetowych – ceny w skrócie",
         paragraphs: [
           "Pracujemy na trzech pakietach, bo większość małych firm usługowych potrzebuje jednego z nich:",
         ],
+        table: {
+          caption: "Cennik stron internetowych Dobrze się składa (ceny końcowe)",
+          head: ["Pakiet", "Cena", "Czas realizacji"],
+          rows: [
+            ["[Landing page](/landing-page/)", "od 1000 zł", "1–2 tygodnie"],
+            ["Strona firmowa", "od 2000 zł", "3–4 tygodnie"],
+            ["[Opieka i rozwój](/opieka-i-rozwoj-strony/)", "od 150 zł / mies.", "na bieżąco"],
+          ],
+        },
         list: [
           "[Landing page](/landing-page/) od 1000 zł: jedna strona pod jedną usługę albo kampanię, gotowa w 1–2 tygodnie.",
           "Strona firmowa od 2000 zł: podstrony usług, struktura pod Google i wersja mobilna, gotowa w 3–4 tygodnie.",
@@ -75,6 +97,11 @@ export const articles: Article[] = [
           "Zmiany po publikacji. Nowa usługa, nowy cennik, nowe zdjęcia. Warto wiedzieć, kto i za ile je wprowadzi.",
           "Własność strony. Upewnij się, że domena jest zarejestrowana na Ciebie, a nie na wykonawcę.",
         ],
+        after: [
+          "**Ile kosztuje landing page?** U nas od 1000 zł. To jedna strona pod jedną usługę albo kampanię, z cennikiem lub kalkulatorem i przyciskiem kontaktu. Szczegóły pakietu znajdziesz na stronie [landing page](/landing-page/).",
+          "**Ile kosztuje strona firmowa z kilkoma podstronami?** Od 2000 zł za stronę z osobnymi podstronami usług, informacjami o firmie i kontaktem. Każda kolejna usługa z własnym opisem, wersja językowa czy blog podnoszą cenę.",
+          "**Ile kosztuje opieka nad stroną po starcie?** Od 150 zł miesięcznie za zmiany, aktualizacje i rozwój w ramach [opieki i rozwoju strony](/opieka-i-rozwoj-strony/).",
+        ],
       },
       {
         heading: "Tania strona czy strona, która przynosi klientów",
@@ -86,12 +113,17 @@ export const articles: Article[] = [
       {
         heading: "Jak dostać wycenę",
         paragraphs: [
-          "Napisz WYCENA na Instagramie albo Facebooku albo skorzystaj z [formularza kontaktowego](/kontakt/). Zadamy 4 krótkie pytania o projekt, podamy widełki cenowe według pakietów, a potem porozmawiamy 15 minut o szczegółach.",
+          "**[Zamów bezpłatną wycenę](/kontakt/)** przez formularz kontaktowy albo napisz WYCENA na Instagramie lub Facebooku. Zadamy 4 krótkie pytania o projekt, podamy widełki cenowe według pakietów, a potem porozmawiamy 15 minut o szczegółach.",
+          "Chcesz wiedzieć, jak wygląda współpraca po wycenie? Opisujemy to w artykule [proces tworzenia strony internetowej](/blog/proces-tworzenia-strony-internetowej/), a terminy w artykule [ile trwa zrobienie strony internetowej](/blog/ile-trwa-zrobienie-strony-internetowej/).",
         ],
       },
     ],
     cta: "Chcesz wiedzieć, ile będzie kosztować Twoja strona? Napisz WYCENA.",
-    related: ["landing-page-czy-strona-firmowa", "ile-trwa-zrobienie-strony-internetowej"],
+    related: [
+      "proces-tworzenia-strony-internetowej",
+      "ile-trwa-zrobienie-strony-internetowej",
+      "landing-page-czy-strona-firmowa",
+    ],
   },
   {
     slug: "landing-page-czy-strona-firmowa",
@@ -161,12 +193,22 @@ export const articles: Article[] = [
     title: "Jak wygląda proces tworzenia strony internetowej krok po kroku?",
     seoTitle: "Proces tworzenia strony internetowej",
     description:
-      "Poznajemy, projektujemy, budujemy, odpalamy. Zobacz, jak wygląda proces tworzenia strony internetowej krok po kroku i co przygotować, żeby poszło sprawnie.",
+      "Proces tworzenia strony internetowej w 4 etapach: poznajemy, projektujemy, budujemy, odpalamy. Sprawdź, co przygotować, i zamów bezpłatną wycenę.",
     date: "2026-11-03",
     readingTime: "5 min czytania",
     lead:
       "Tworzenie strony internetowej dzielimy na cztery etapy: poznajemy, projektujemy, budujemy, odpalamy. Każdy kończy się konkretnym efektem, więc wiesz, na czym stoisz, zanim przejdziemy dalej.",
     sections: [
+      {
+        heading: "Etapy tworzenia strony internetowej w skrócie",
+        paragraphs: [],
+        list: [
+          "**Poznajemy** – efekt: ustalony zakres, pakiet i struktura strony.",
+          "**Projektujemy** – efekt: projekt graficzny zaakceptowany przez Ciebie.",
+          "**Budujemy** – efekt: gotowa, przetestowana strona do przejrzenia.",
+          "**Odpalamy** – efekt: strona działa pod Twoją domeną, a my wspieramy Cię po starcie.",
+        ],
+      },
       {
         heading: "Etap 1: Poznajemy",
         paragraphs: [
@@ -175,10 +217,10 @@ export const articles: Article[] = [
         ],
       },
       {
-        heading: "Etap 2: Projektujemy",
+        heading: "Etap 2: Projektujemy – akceptujesz projekt, zanim zaczniemy kodować",
         paragraphs: [
           "Planujemy strukturę: jakie sekcje i podstrony są potrzebne, w jakiej kolejności klient poznaje ofertę i gdzie ma kliknąć, żeby się z Tobą skontaktować. Dopiero potem projektujemy wygląd dopasowany do Twojej marki.",
-          "Efekt etapu: widzisz projekt strony, zanim powstanie pierwsza linijka kodu. Poprawki na tym etapie są najtańsze i najszybsze.",
+          "Efekt etapu: widzisz projekt strony, zanim powstanie pierwsza linijka kodu. **Do budowy przechodzimy dopiero wtedy, gdy zaakceptujesz projekt graficzny.** Poprawki na tym etapie są najtańsze i najszybsze.",
         ],
       },
       {
@@ -193,27 +235,45 @@ export const articles: Article[] = [
         paragraphs: [
           "Publikujemy stronę pod Twoją domeną i sprawdzamy, czy wszystko działa po starcie: formularze, przyciski, wersja mobilna.",
           "Efekt etapu: strona działa i może zbierać zapytania od klientów. Jeśli chcesz, żeby dalej się rozwijała, przechodzimy na [opiekę i rozwój strony](/opieka-i-rozwoj-strony/).",
+          "**[Zamów bezpłatną wycenę](/kontakt/)**, żeby ustalić zakres i termin Twojej strony.",
         ],
       },
       {
-        heading: "Co przygotować przed startem",
+        heading: "Co przygotować przed stworzeniem strony internetowej",
         paragraphs: [
           "Najwięcej czasu w każdym projekcie zjada czekanie na materiały. Jeśli przygotujesz je wcześniej, strona powstanie szybciej:",
         ],
         list: [
-          "Opis usług i cennik, nawet w formie notatek. Pomożemy je uporządkować.",
-          "Zdjęcia: Twoje, zespołu, miejsca pracy i realizacji. Prawdziwe zdjęcia działają lepiej niż zdjęcia ze stocków.",
-          "Logo i kolory marki, jeśli je masz.",
-          "Opinie klientów, za ich zgodą.",
-          "Dostęp do domeny albo informację, gdzie jest zarejestrowana.",
+          "**Teksty:** opis usług, nawet w formie notatek. Pomożemy je uporządkować.",
+          "**Zdjęcia:** Twoje, zespołu, miejsca pracy i realizacji. Prawdziwe zdjęcia działają lepiej niż zdjęcia ze stocków.",
+          "**Logo** i kolory marki, jeśli je masz.",
+          "**Cennik usług**, choćby orientacyjny.",
+          "**Opinie klientów**, za ich zgodą.",
+          "**Dostęp do domeny** albo informację, gdzie jest zarejestrowana.",
+        ],
+        after: [
+          "Termin realizacji liczymy od dnia, w którym mamy komplet materiałów. Więcej o tym w artykule [ile trwa zrobienie strony internetowej](/blog/ile-trwa-zrobienie-strony-internetowej/).",
         ],
       },
       {
         heading: "Ile to wszystko trwa",
         paragraphs: [
           "Landing page powstaje w 1–2 tygodnie, strona firmowa w 3–4 tygodnie, licząc od przekazania materiałów. Szczegóły i to, co może wydłużyć projekt, opisujemy w artykule [Ile trwa zrobienie strony internetowej](/blog/ile-trwa-zrobienie-strony-internetowej/).",
+          "Ceny pakietów i to, od czego zależą, znajdziesz w artykule [ile kosztuje strona internetowa](/blog/ile-kosztuje-strona-internetowa/).",
           "Chcesz zobaczyć, jak ten proces wyglądał w praktyce? Zajrzyj do [naszych realizacji](/projekty/).",
         ],
+      },
+    ],
+    faq: [
+      {
+        question: "Czy mogę zobaczyć projekt graficzny, zanim zacznie się kodowanie?",
+        answer:
+          "Tak. Akceptacja projektu graficznego to warunek przejścia do etapu Budujemy. Dopóki projekt Ci nie odpowiada, wprowadzamy poprawki w projekcie, a nie w gotowym kodzie.",
+      },
+      {
+        question: "Co muszę przygotować przed rozpoczęciem prac?",
+        answer:
+          "Teksty o usługach (mogą być notatki), zdjęcia, logo i cennik usług. Im szybciej je przekażesz, tym szybciej startujemy z terminem.",
       },
     ],
     cta: "Chcesz przejść ten proces ze swoją stroną? Napisz WYCENA.",
@@ -288,7 +348,7 @@ export const articles: Article[] = [
     title: "Ile trwa zrobienie strony internetowej i od czego to zależy?",
     seoTitle: "Ile trwa zrobienie strony internetowej?",
     description:
-      "Landing page powstaje w 1–2 tygodnie, strona firmowa w 3–4 tygodnie. Sprawdź, co wydłuża realizację strony internetowej i jak przyspieszyć cały proces.",
+      "Landing page robimy w 1–2 tygodnie, stronę firmową w 3–4 tygodnie. Sprawdź, co wydłuża realizację, i zamów bezpłatną wycenę terminu dla Twojej firmy.",
     date: "2026-11-03",
     readingTime: "4 min czytania",
     lead:
@@ -297,19 +357,25 @@ export const articles: Article[] = [
       {
         heading: "Czas realizacji w skrócie",
         paragraphs: [],
-        list: [
-          "[Landing page](/landing-page/): 1–2 tygodnie.",
-          "Strona firmowa: 3–4 tygodnie.",
-          "Zmiany w ramach [opieki nad stroną](/opieka-i-rozwoj-strony/): na bieżąco, według ustalonego zakresu.",
-        ],
+        table: {
+          caption: "Czas realizacji strony internetowej, liczony od przekazania materiałów",
+          head: ["Pakiet", "Czas realizacji"],
+          rows: [
+            ["[Landing page](/landing-page/)", "1–2 tygodnie"],
+            ["Strona firmowa", "3–4 tygodnie"],
+            ["[Opieka nad stroną](/opieka-i-rozwoj-strony/)", "na bieżąco"],
+          ],
+        },
         after: [
-          "Te terminy obejmują cały [proces tworzenia strony](/blog/proces-tworzenia-strony-internetowej/): projekt, budowę i publikację.",
+          "**Tyle samo trwa stworzenie strony internetowej od zera – liczymy od dnia, w którym dostajemy materiały.** Te terminy obejmują projekt, budowę i publikację.",
+          "Ceny tych pakietów rozpisujemy w artykule [ile kosztuje strona internetowa](/blog/ile-kosztuje-strona-internetowa/).",
         ],
       },
       {
         heading: "Dlaczego liczymy od przekazania materiałów",
         paragraphs: [
           "Bez opisu usług, zdjęć i cennika możemy zaprojektować układ, ale nie gotową stronę. Gdy materiały przychodzą w częściach, przez kilka tygodni, projekt rozciąga się razem z nimi. Dlatego termin startuje dopiero wtedy, gdy mamy komplet.",
+          "Co dokładnie dzieje się w tym czasie, krok po kroku, opisujemy w artykule [proces tworzenia strony internetowej](/blog/proces-tworzenia-strony-internetowej/).",
         ],
       },
       {
@@ -327,17 +393,18 @@ export const articles: Article[] = [
         heading: "Jak przyspieszyć powstanie strony",
         paragraphs: [],
         list: [
-          "Przygotuj opis usług i cennik, nawet w formie notatek w telefonie.",
-          "Zbierz zdjęcia realizacji, swoje i miejsca pracy w jednym folderze.",
-          "Wybierz jedną osobę, która akceptuje projekt.",
-          "Zgłaszaj poprawki zbiorczo, w jednej wiadomości, a nie po jednej dziennie.",
-          "Zacznij od landing page, jeśli zależy Ci na czasie, i rozbuduj stronę później.",
+          "**Przekaż teksty, zdjęcia i logo od razu.** Opis usług i cennik mogą być notatkami w telefonie, zdjęcia realizacji wrzuć do jednego folderu.",
+          "**Szybko zaakceptuj projekt graficzny.** Budowę zaczynamy dopiero po akceptacji, więc każdy dzień zwłoki przesuwa termin.",
+          "**Wyznacz jedną osobę do kontaktu.** Jedna osoba zbiera uwagi i akceptuje projekt po Twojej stronie.",
+          "**Zgłaszaj poprawki zbiorczo**, w jednej wiadomości, a nie po jednej dziennie.",
+          "**Zacznij od landing page**, jeśli zależy Ci na czasie, i rozbuduj stronę później.",
         ],
       },
       {
         heading: "A co po starcie?",
         paragraphs: [
           "Publikacja to nie koniec. Pierwsze tygodnie pokazują, o co klienci pytają i gdzie klikają. Wtedy warto poprawić teksty albo dodać brakującą informację. Jeśli wolisz nie robić tego samodzielnie, zajmiemy się tym w ramach [opieki i rozwoju strony](/opieka-i-rozwoj-strony/), od 150 zł miesięcznie.",
+          "**[Zamów bezpłatną wycenę](/kontakt/)**, żeby dowiedzieć się, kiedy Twoja strona może być gotowa.",
         ],
       },
     ],

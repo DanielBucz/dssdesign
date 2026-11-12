@@ -3060,6 +3060,50 @@ a {
   text-underline-offset: 0.18em;
 }
 
+.article-table-wrap {
+  margin: 0 0 1.2rem;
+  overflow-x: auto;
+}
+
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+}
+
+.article-table caption {
+  margin-bottom: 0.6rem;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.article-table th,
+.article-table td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  padding: 0.7rem 0.8rem 0.7rem 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-table thead th {
+  border-bottom: 2px solid var(--color-black);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.article-table tbody th {
+  font-weight: 800;
+}
+
+.article-faq h3 {
+  margin: 1.2rem 0 0.4rem;
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
 .article-related {
   border-top: 2px solid var(--color-black);
   padding-top: clamp(1.8rem, 3.5vw, 2.6rem);

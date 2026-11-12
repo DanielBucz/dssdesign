@@ -54,6 +54,20 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         author: { "@type": "Organization", "@id": `${siteConfig.url}/#organization`, name: siteConfig.name },
         publisher: { "@type": "Organization", "@id": `${siteConfig.url}/#organization`, name: siteConfig.name },
       }} />
+      {article.faq?.length ? (
+        <StructuredData data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: article.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*/g, ""),
+            },
+          })),
+        }} />
+      ) : null}
       <article className="article light-page" data-nav-theme="light">
         <header className="article-header">
           <p className="subpage-kicker">
@@ -74,6 +88,33 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   <RichText text={paragraph} />
                 </p>
               ))}
+              {section.table ? (
+                <div className="article-table-wrap">
+                  <table className="article-table">
+                    <caption>{section.table.caption}</caption>
+                    <thead>
+                      <tr>
+                        {section.table.head.map((cell) => (
+                          <th key={cell} scope="col">{cell}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {section.table.rows.map((row) => (
+                        <tr key={row[0]}>
+                          {row.map((cell, index) =>
+                            index === 0 ? (
+                              <th key={index} scope="row"><RichText text={cell} /></th>
+                            ) : (
+                              <td key={index}><strong><RichText text={cell} /></strong></td>
+                            ),
+                          )}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : null}
               {section.list ? (
                 <ul>
                   {section.list.map((item) => (
@@ -90,6 +131,19 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               ))}
             </section>
           ))}
+          {article.faq?.length ? (
+            <section className="article-faq">
+              <h2>Najczęstsze pytania</h2>
+              {article.faq.map((item) => (
+                <div key={item.question}>
+                  <h3>{item.question}</h3>
+                  <p>
+                    <RichText text={item.answer} />
+                  </p>
+                </div>
+              ))}
+            </section>
+          ) : null}
         </div>
 
         {related.length ? (
