@@ -5,6 +5,8 @@ export type Project = {
   year: string;
   type: string;
   status?: "in-progress";
+  /** false = case study dostępne pod swoim adresem, ale niepokazywane w portfolio (lista /projekty/, strona główna). */
+  listed?: boolean;
   description: string;
   /** Jedno zdanie w języku branży klienta, widoczne na karcie projektu. */
   industry: string;
@@ -12,6 +14,10 @@ export type Project = {
   headline: string;
   seoTitle: string;
   seoDescription: string;
+  /** Jedno zdanie o problemie klienta i rozwiązaniu, widoczne na karcie projektu w /projekty/. */
+  summary?: string;
+  /** Akapit o tym, jak powstawała strona (sekcja „Jak powstała strona”). */
+  process?: string;
   /** Tekst CTA do /kontakt/ na końcu case study. */
   cta: string;
   note?: string;
@@ -43,6 +49,8 @@ export const projects: Project[] = [
   {
     slug: "trans-adviser",
     title: "Trans Adviser",
+    // Wg Wiedzy o DSS projekt nie jest promowany w portfolio ani w social media.
+    listed: false,
     category: "Web Design / SEO / Development",
     year: "2025",
     type: "Real Client Project",
@@ -100,6 +108,8 @@ export const projects: Project[] = [
     description:
       "Landing page dla detailingu samochodowego w Lublinie, z ofertą usług, realizacjami, kalkulatorem wyceny i ścieżką kontaktu.",
     industry: "Landing page dla lokalnej usługi detailingu samochodowego.",
+    summary:
+      "Problem: klient chciał zobaczyć efekt i orientacyjną cenę, zanim zadzwoni. Rozwiązanie: realizacje przed i po oraz kalkulator wyceny na jednej stronie.",
     headline: "strona internetowa dla firmy detailingowej",
     seoTitle: "Strona dla firmy detailingowej",
     seoDescription:
@@ -154,25 +164,27 @@ export const projects: Project[] = [
     description:
       "Strona pracowni ceramiki inspirowanej naturą — z kolekcjami, katalogiem prac i spokojną oprawą wizualną.",
     industry: "Strona dla pracowni ceramiki i rękodzieła.",
+    summary:
+      "Problem: dużo różnorodnych prac ręcznych bez jednego miejsca do ich pokazania. Rozwiązanie: kolekcje, kategorie i duże zdjęcia ceramiki, wygodne też na telefonie.",
     headline: "strona internetowa dla pracowni ceramiki",
-    seoTitle: "Strona dla pracowni ceramiki",
+    seoTitle: "Strona internetowa dla pracowni ceramiki",
     seoDescription:
-      "Strona dla pracowni ceramiki Handmade by Martula art: kolekcje inspirowane naturą, katalog prac i duże zdjęcia ceramiki. Zobacz cały projekt.",
+      "Strona internetowa dla pracowni ceramiki Handmade by Martula art. Kolekcje inspirowane naturą, duże zdjęcia prac. Zamów bezpłatną wycenę strony.",
     cta: "Masz podobny projekt rękodzieła? Napisz WYCENA.",
     palette: "interior",
     imageSrc: "/images/case-studies/handmade-by-martula/home-hero.png",
     imageAlt:
-      "Rzut strony głównej Martula Art z nagłówkiem Ceramika inspirowana naturą i zdjęciem bukietu ceramicznych kwiatów.",
+      "Strona internetowa dla pracowni ceramiki Martula Art: nagłówek Ceramika inspirowana naturą i bukiet ceramicznych kwiatów.",
     gallery: [
       {
         src: "/images/case-studies/handmade-by-martula/selected-works.png",
-        alt: "Rzut sekcji Wybrane prace z ceramicznymi filiżankami z motywem domków i żółtymi świecznikami.",
+        alt: "Sekcja Wybrane prace: ceramika ręcznie robiona, filiżanki z motywem domków i żółte świeczniki.",
         label: "Wybrane prace",
         orientation: "landscape",
       },
       {
         src: "/images/case-studies/handmade-by-martula/mobile-catalog.png",
-        alt: "Mobilny rzut katalogu Prace ceramiczne z przyciskami kategorii ceramiki.",
+        alt: "Katalog ceramiki ręcznie robionej na telefonie, z przyciskami kategorii prac.",
         label: "Katalog na telefonie",
         orientation: "portrait",
       },
@@ -181,10 +193,12 @@ export const projects: Project[] = [
     challenge:
       "Pokazać charakter ręcznie tworzonej ceramiki i uporządkować różnorodne prace w czytelne kategorie oraz kolekcje inspirowane naturą.",
     solution:
-      "Projekt łączy duże fotografie prac, wyraziste szeryfowe nagłówki i spokojne tło. Kolekcje oraz nawigacja po kategoriach pomagają odkrywać ceramiczne kwiaty, naczynia i formy dekoracyjne również na telefonie.",
+      "Projekt łączy duże fotografie prac, wyraziste szeryfowe nagłówki i spokojne tło. Kolekcje oraz nawigacja po kategoriach pomagają odkrywać ceramiczne kwiaty, naczynia i formy dekoracyjne również na telefonie. Teksty mówią językiem marki: ceramiczne bukiety przedstawia hasło „Kwiaty, które nie więdną.”, a nie katalogowy opis produktu.",
     // TODO [WYNIK]: dopisać potwierdzony efekt strony Martula Art (zapytania, sprzedaż), jeśli będzie dostępny.
     effect:
-      "Strona marki ceramicznej działa pod adresem martula-art.pl, z hasłem „Ceramika inspirowana naturą”. Prezentowane widoki pokazują stronę główną z wybranymi pracami i mobilny katalog z podziałem na kategorie ceramiki.",
+      "Strona marki ceramicznej działa pod adresem martula-art.pl, z hasłem „Ceramika inspirowana naturą”. Prace są pogrupowane w kolekcje i kategorie, więc osoba szukająca konkretnej formy, np. kwiatów albo naczyń, nie musi przewijać całego dorobku pracowni. Katalog jest ułożony tak, żeby wygodnie przeglądać ceramikę na telefonie, a duże zdjęcia pokazują fakturę i kolor każdej pracy. Przy pracach, które się spodobały, strona prowadzi do kontaktu z pracownią.",
+    process:
+      "Strona powstała w czterech krokach: poznaliśmy pracownię i jej prace, zaprojektowaliśmy układ kolekcji i kategorii, zbudowaliśmy stronę z naciskiem na wersję mobilną i uruchomiliśmy ją pod własną domeną. Ten sam proces stosujemy przy każdej stronie dla rękodzieła, gdzie najważniejsze jest pokazanie prac, a nie długi opis oferty.",
     system: {
       typography:
         "Duże szeryfowe nagłówki zestawione z lekkim, czytelnym krojem bezszeryfowym w opisach i nawigacji.",
@@ -205,6 +219,8 @@ export const projects: Project[] = [
     description:
       "Strona trenerki personalnej z ofertą w trzech pakietach, ceną przy każdym i osobnym przyciskiem kontaktu.",
     industry: "Strona dla trenera personalnego z cennikiem pakietów.",
+    summary:
+      "Problem: klientki zaczynały rozmowę od pytania o cenę. Rozwiązanie: sekcja oferty z trzema pakietami i ceną przy każdym, żeby klientka wybrała pakiet, zanim napisze.",
     headline: "strona internetowa dla trenera personalnego",
     seoTitle: "Strona dla trenera personalnego",
     seoDescription:
@@ -250,6 +266,9 @@ export const projects: Project[] = [
     roles: ["Web Design", "UX", "Development"],
   },
 ];
+
+/** Projekty pokazywane w portfolio (lista /projekty/, strona główna, nawigacja „Następny projekt”). */
+export const listedProjects = projects.filter((project) => project.listed !== false);
 
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug);

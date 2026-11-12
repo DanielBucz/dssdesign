@@ -1,8 +1,8 @@
 import { ProjectCard } from "@/components/projects/ProjectCard";
-import { projects } from "@/data/projects";
+import { listedProjects } from "@/data/projects";
 
 export function SelectedProjects() {
-  const selectedProjects = projects.slice(0, 3);
+  const selectedProjects = listedProjects.slice(0, 3);
 
   return (
     <section
@@ -27,8 +27,8 @@ export function SelectedProjects() {
 
         <div className="projects-intro">
           <p>
-            Strona B2B dla firmy transportowej, landing page dla detailingu
-            i strona pracowni ceramiki. Zobacz, jak wyglądają w praktyce.
+            Landing page dla detailingu, strona pracowni ceramiki i strona
+            trenerki personalnej. Zobacz, jak wyglądają w praktyce.
           </p>
           <a href="/projekty/">
             Zobacz wszystkie realizacje <span aria-hidden="true">→</span>

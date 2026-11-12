@@ -1480,7 +1480,7 @@ a {
   overflow-wrap: anywhere;
 }
 
-.subpage-hero p:last-child {
+.subpage-hero p:last-of-type {
   max-width: 43rem;
   margin: 0;
   color: currentColor;
@@ -2818,6 +2818,10 @@ a {
   margin: 0;
 }
 
+.audit-lead p + p {
+  margin-top: 0.8rem;
+}
+
 .steps-list {
   display: grid;
   gap: 0.35rem;
@@ -3130,4 +3134,110 @@ a {
   .article-list {
     grid-template-columns: 1fr;
   }
+}
+
+/* SEO: rozbudowane sekcje podstron (listy, kilka akapitów, linki w CTA) */
+.case-body {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.case-section.is-long p {
+  font-size: clamp(1.15rem, 1.7vw, 1.75rem);
+  line-height: 1.3;
+}
+
+.case-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: rgba(247, 247, 243, 0.78);
+  font-size: clamp(1rem, 1.3vw, 1.3rem);
+  font-weight: 620;
+  line-height: 1.35;
+}
+
+.case-list li {
+  border-left: 2px solid var(--color-accent);
+  padding-left: 0.9rem;
+}
+
+.final-cta-links {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.final-cta-side .final-cta-links a {
+  border: 0;
+  padding: 0.45rem 0;
+  justify-content: flex-start;
+  gap: 0.4rem;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+}
+
+.final-cta-side .final-cta-links a:hover,
+.final-cta-side .final-cta-links a:focus-visible {
+  background: transparent;
+  color: var(--color-white, #f7f7f3);
+  transform: none;
+}
+
+.subpage-industries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.subpage-industries li {
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  opacity: 0.74;
+}
+
+.project-meta .project-summary {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.project-meta .project-link {
+  display: inline-flex;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  color: var(--color-accent-on-light);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.contact-page .contact-subtitle {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.4vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.content-copy .case-note-small {
+  margin-top: 1.6rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* /kontakt/: dłuższe H1 z frazą główną, bez łamania słowa w środku */
+.contact-page h1 {
+  max-width: 16ch;
+  font-size: clamp(2.3rem, 5.4vw, 6.4rem);
+  overflow-wrap: normal;
 }

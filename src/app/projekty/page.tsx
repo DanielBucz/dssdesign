@@ -2,11 +2,11 @@ import { pageMetadata } from "@/config/seo";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { PageShell } from "@/components/layout/PageShell";
 import { ProjectCard } from "@/components/projects/ProjectCard";
-import { projects } from "@/data/projects";
+import { listedProjects } from "@/data/projects";
 
 export const metadata = pageMetadata(
   "Realizacje stron internetowych dla firm",
-  "Realizacje stron dla firm: transport, detailing, trenerka personalna i pracownia ceramiki. Zobacz efekty i zamów bezpłatną wycenę swojej strony.",
+  "Realizacje stron internetowych dla firm usługowych: detailing, trenerka personalna, pracownia ceramiki. Zobacz przykłady i zamów bezpłatną wycenę.",
   "/projekty/",
 );
 
@@ -19,15 +19,21 @@ export default function ProjectsPage() {
           Realizacje stron internetowych dla firm<span className="accent-dot">.</span>
         </h1>
         <p>
-          Strony i landing page dla firm usługowych i B2B: od transportu, przez
-          detailing, po trenerkę personalną i pracownię ceramiki. Chcesz podobną
-          stronę? <a href="/kontakt/">Napisz WYCENA →</a>
+          Nasze portfolio stron internetowych dla firm to przykłady stron
+          i landing page dla małych firm usługowych. Przy każdej realizacji
+          piszemy, z jakim problemem przyszedł klient i co zmieniła strona.
+          Chcesz podobną stronę? <a href="/kontakt/">Napisz WYCENA →</a>
         </p>
+        <ul className="subpage-industries" aria-label="Branże w portfolio">
+          <li>detailing samochodowy</li>
+          <li>trenerka personalna</li>
+          <li>pracownia ceramiki i rękodzieło</li>
+        </ul>
       </section>
 
       <section className="subpage-projects light-page" data-nav-theme="light" aria-label="Lista projektów">
-        {projects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+        {listedProjects.map((project) => (
+          <ProjectCard key={project.slug} project={project} detailed />
         ))}
       </section>
 
@@ -39,7 +45,12 @@ export default function ProjectsPage() {
         </ul>
       </section>
 
-      <FinalCTA />
+      <FinalCTA
+        links={[
+          { label: "Wiesz, że chcesz landing page?", href: "/landing-page/" },
+          { label: "Masz stronę i szukasz opieki?", href: "/opieka-i-rozwoj-strony/" },
+        ]}
+      />
     </PageShell>
   );
 }

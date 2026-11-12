@@ -3,11 +3,18 @@ import { PageShell } from "@/components/layout/PageShell";
 import { siteConfig } from "@/config/site";
 import { Faq } from "@/components/Faq";
 import { LeadForm } from "@/components/LeadForm";
-import { priceFaq } from "@/data/faq";
+import { priceFaq, type FaqItem } from "@/data/faq";
+
+const valuationFaq: FaqItem = {
+  question: "Ile kosztuje wycena strony internetowej?",
+  answer:
+    "Wycena strony internetowej jest bezpłatna i do niczego nie zobowiązuje. Zadajemy kilka pytań o projekt i podajemy widełki cenowe według naszych pakietów. Orientacyjne ceny pakietów znajdziesz w artykule o kosztach strony.",
+  link: { label: "Orientacyjne ceny pakietów – artykuł", href: "/blog/ile-kosztuje-strona-internetowa/" },
+};
 
 export const metadata = pageMetadata(
   "Wycena strony internetowej - kontakt",
-  "Ile kosztuje Twoja strona internetowa? Wypełnij krótki formularz albo zadzwoń: 668 974 402. Odpowiemy z widełkami cenowymi po krótkiej rozmowie.",
+  "Chcesz wycenę strony internetowej? Wypełnij formularz, zadzwoń na 668 974 402 albo napisz e-mail. Odpowiemy widełkami cenowymi po krótkiej rozmowie.",
   "/kontakt/",
 );
 
@@ -17,9 +24,11 @@ export default function ContactPage() {
       <section className="contact-page dark-page" data-nav-theme="dark">
         <p className="subpage-kicker">Kontakt</p>
         <h1>
-          <span className="h1-sub">Wycena strony internetowej. </span>
-          Masz pomysł? Dobrze się <span className="keep-together">składa<span className="accent-dot">.</span></span>
+          Wycena strony internetowej<span className="accent-dot">.</span>
         </h1>
+        <p className="contact-subtitle">
+          Masz pomysł? Dobrze się <span className="keep-together">składa<span className="accent-dot">.</span></span>
+        </p>
         <div className="contact-panel">
           <p>
             Napisz WYCENA <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">na Instagramie</a> albo Facebooku, wypełnij formularz poniżej
@@ -52,6 +61,10 @@ export default function ContactPage() {
             NAPISZ DO NAS<span className="accent-dot">.</span>
           </h2>
           <div className="audit-lead">
+            <p>
+              Zamów bezpłatną wycenę strony internetowej – wypełnij formularz wyceny
+              strony internetowej, zadzwoń albo napisz e-mail.
+            </p>
             <p>Jak wygląda WYCENA:</p>
             <ol className="steps-list">
               <li>Piszesz WYCENA <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">na Instagramie</a>, Facebooku albo przez formularz.</li>
@@ -82,10 +95,18 @@ export default function ContactPage() {
             z 3 konkretnymi poprawkami do wdrożenia. Bez opłat i bez zobowiązań.
           </p>
           <a href="/#audyt">Zamów audyt przez formularz <span aria-hidden="true">→</span></a>
+          <p>
+            Wolisz najpierw zobaczyć przykłady naszych stron?
+          </p>
+          <a href="/projekty/">Zobacz nasze realizacje <span aria-hidden="true">→</span></a>
+          <p className="case-note-small">
+            Dobrze się składa (DSS Design) – projektowanie stron internetowych
+            i landing page dla małych firm usługowych.
+          </p>
         </div>
       </section>
 
-      <Faq number="03" items={[priceFaq]} />
+      <Faq number="03" items={[valuationFaq, priceFaq]} />
     </PageShell>
   );
 }

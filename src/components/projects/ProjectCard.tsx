@@ -4,9 +4,11 @@ import { ProjectVisual } from "./ProjectVisual";
 
 type ProjectCardProps = {
   project: Project;
+  /** Pokaż zdanie „problem → rozwiązanie” i przycisk „Zobacz projekt” (lista /projekty/). */
+  detailed?: boolean;
 };
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, detailed = false }: ProjectCardProps) {
   return (
     <article className="project-card" data-palette={project.palette}>
       <Link className="project-cover" href={`/projekty/${project.slug}`} aria-label={`Zobacz case study: ${project.title}`}>
@@ -21,6 +23,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div>
           <p className="project-industry">{project.industry}</p>
           <p>{project.description}</p>
+          {detailed && project.summary ? <p className="project-summary">{project.summary}</p> : null}
+          {detailed ? (
+            <Link className="project-link" href={`/projekty/${project.slug}/`}>
+              Zobacz projekt <span aria-hidden="true">→</span>
+            </Link>
+          ) : null}
         </div>
       </div>
     </article>

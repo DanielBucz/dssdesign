@@ -1,9 +1,19 @@
 import type { ReactNode } from "react";
+import { Faq } from "@/components/Faq";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { PageShell } from "@/components/layout/PageShell";
 import { StructuredData } from "@/components/StructuredData";
 import { pageUrl } from "@/config/seo";
 import { siteConfig } from "@/config/site";
+import type { FaqItem } from "@/data/faq";
+
+export type ServiceSection = {
+  title: string;
+  /** Jeden akapit albo kilka akapitów (tablica). */
+  body: ReactNode | ReactNode[];
+  /** Lista punktów pod akapitem. */
+  list?: ReactNode[];
+};
 
 type ServicePageProps = {
   path: string;
@@ -12,11 +22,13 @@ type ServicePageProps = {
   lead: string;
   serviceName: string;
   price: string;
-  sections: { title: string; body: ReactNode }[];
+  sections: ServiceSection[];
+  faq?: FaqItem[];
   cta: string;
+  ctaLinks?: { label: string; href: string }[];
 };
 
-export function ServicePage({ path, kicker, heading, lead, serviceName, price, sections, cta }: ServicePageProps) {
+export function ServicePage({ path, kicker, heading, lead, serviceName, price, sections, faq, cta, ctaLinks }: ServicePageProps) {
   return (
     <PageShell>
       <StructuredData data={{
@@ -37,15 +49,32 @@ export function ServicePage({ path, kicker, heading, lead, serviceName, price, s
       </section>
 
       <div className="case-study">
-        {sections.map((section) => (
-          <section className="case-section" key={section.title}>
-            <h2>{section.title}</h2>
-            <p>{section.body}</p>
-          </section>
-        ))}
+        {sections.map((section) => {
+          const paragraphs = Array.isArray(section.body) ? section.body : [section.body];
+          const isLong = paragraphs.length > 1 || Boolean(section.list?.length);
+          return (
+            <section className={isLong ? "case-section is-long" : "case-section"} key={section.title}>
+              <h2>{section.title}</h2>
+              <div className="case-body">
+                {paragraphs.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+                {section.list?.length ? (
+                  <ul className="case-list">
+                    {section.list.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            </section>
+          );
+        })}
       </div>
 
-      <FinalCTA lead={cta} linkLabel="Napisz WYCENA" />
+      {faq?.length ? <Faq number="01" items={faq} /> : null}
+
+      <FinalCTA lead={cta} linkLabel="Napisz WYCENA" links={ctaLinks} />
     </PageShell>
   );
 }

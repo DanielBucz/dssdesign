@@ -5,7 +5,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { ProjectVisual } from "@/components/projects/ProjectVisual";
 import { pageMetadata } from "@/config/seo";
 import { siteConfig } from "@/config/site";
-import { getProjectBySlug, projects } from "@/data/projects";
+import { getProjectBySlug, listedProjects, projects } from "@/data/projects";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -45,8 +45,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  const projectIndex = projects.findIndex((item) => item.slug === project.slug);
-  const nextProject = projects[(projectIndex + 1) % projects.length];
+  // „Następny projekt” prowadzi tylko po projektach z portfolio.
+  const projectIndex = listedProjects.findIndex((item) => item.slug === project.slug);
+  const nextProject = listedProjects[(projectIndex + 1) % listedProjects.length];
 
   return (
     <PageShell>
@@ -144,6 +145,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <p>{project.effect}</p>
         </section>
 
+        {project.process ? (
+          <section className="case-section">
+            <h2>Jak powstała strona</h2>
+            <p>
+              {project.process}{" "}
+              <a href="/blog/proces-tworzenia-strony-internetowej/">Zobacz, jak wygląda proces tworzenia strony →</a>
+            </p>
+          </section>
+        ) : null}
+
         {project.proof ? (
           <section className="case-section">
             <h2>Gdzie to zobaczyć</h2>
@@ -174,7 +185,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <a href={`/projekty/${nextProject.slug}/`}>Następny projekt → {nextProject.title}</a>
         </nav>
       </article>
-      <FinalCTA lead={project.cta} linkLabel="Napisz WYCENA" />
+      <FinalCTA
+        lead={project.cta}
+        linkLabel="Napisz WYCENA"
+        links={[
+          { label: "Wszystkie realizacje", href: "/projekty/" },
+          { label: "Landing page dla firmy", href: "/landing-page/" },
+        ]}
+      />
     </PageShell>
   );
 }

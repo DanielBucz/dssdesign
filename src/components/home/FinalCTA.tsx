@@ -1,11 +1,14 @@
 type FinalCTAProps = {
   lead?: string;
   linkLabel?: string;
+  /** Dodatkowe linki wewnętrzne dla osób, które już wiedzą, czego potrzebują. */
+  links?: { label: string; href: string }[];
 };
 
 export function FinalCTA({
   lead = "Napisz WYCENA albo zadzwoń. Porozmawiajmy o stronie dla Twojej firmy.",
   linkLabel = "Porozmawiajmy",
+  links,
 }: FinalCTAProps) {
   return (
     <section
@@ -28,6 +31,15 @@ export function FinalCTA({
         <a href="/kontakt/">
           {linkLabel} <span aria-hidden="true">→</span>
         </a>
+        {links?.length ? (
+          <ul className="final-cta-links">
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href}>{link.label} <span aria-hidden="true">→</span></a>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </div>
     </section>
   );
